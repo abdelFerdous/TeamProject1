@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Marsden Compressed';
+    src: local('Marsden Compressed Condensed Heavy'), local('Marsden-Compressed-Condensed-Heavy'),
+        url('Marsden-Cn-Heavy.woff2') format('woff2'),
+        url('Marsden-Cn-Heavy.woff') format('woff'),
+        url('Marsden-Cn-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }

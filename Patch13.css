@@ -1,0 +1,152 @@
+
+
+@media screen and (max-width: 580px) {
+    .pagename{
+        font-size: 13px !important;
+    }
+    .logoimg{
+        height: 50px !important;
+        width: 50px !important;
+    }
+    .pageimg{
+        height: 30px !important;
+        width: 30px !important;
+    }
+    .article p, .article ul  {
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+        font-size: 15px !important;
+    }
+
+    .article h1, .article h2 {
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+        font-size: 20px !important;
+    }
+    .fishes{
+        margin-top: 100% !important;
+    }
+    .text-muted{
+        font-size: 10px !important;
+    }
+  }
+.row-footer {
+    background-color: #AfAfAf;
+    margin: 200px auto;
+    padding: 20px 0px 20px 0px;
+  }
+
+  h1 {
+    color: #66FCF1 !important;
+    font-size: 30px !important;
+  }
+  
+  
+  
+  .fishes{
+    position: absolute;
+        top: -550px;
+        left: 4px;
+        --animate-duration: 0.75s;
+  
+  }
+  .fish{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  body { 
+      max-width: 2300px; 
+      margin-left: 50px; 
+      float: none !important; 
+  }
+  p {
+    color: #C5C6C7;
+  }
+  
+  body {
+    background-color: #0b0c10 !important;
+  }
+  
+  h2 {
+    color: #C5C6C7 !important;
+  
+  }
+  
+  
+  
+  .tag {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 1s;
+  }
+  
+  .tag.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  .container1 img {
+    width: 10vw;
+    height:auto;
+  }
+  
+  .fish4{
+    position: relative;
+    filter: brightness(50%);
+    
+  }
+  .fish5{
+    margin-left:  400px;
+    margin-top: -630px;
+    position: absolute;
+    animation-duration: 1000ms;
+  }
+  .fish6{
+    max-width: 1000px;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -400px;
+    animation-duration: 500ms;
+  }
+  
+  .article h1, h2, p{
+    margin-bottom: 30px;  
+    margin-left: 200px;
+    margin-right: 200px; 
+    text-align: justify; 
+    font-size: 20px;
+    color:#C5C6C7;
+  }
+
+
+
+  .article li{
+    margin-bottom: 15px;
+  }
+
+  .articleimg{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .card-title{
+    font-family: 'Marsden Compressed';
+    src: local('Marsden Compressed Condensed Heavy'), local('Marsden-Compressed-Condensed-Heavy'),
+        url('Marsden-Cn-Heavy/Marsden-Cn-Heavy.ttf') format('woff2'),
+        url('Marsden-Cn-Heavy/Marsden-Cn-Heavy.woff') format('woff'),
+        url('Marsden-Cn-Heavy/Marsden-Cn-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+  }
+  h3{
+    margin-left: 200px;
+  }
+ 

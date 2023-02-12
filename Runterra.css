@@ -1,0 +1,31 @@
+.navbar{
+    background-color: #1F2836;
+}
+
+nav{
+    height: fit-content !important;
+}
+
+.navbar a{
+  color: rgb(200,200,200);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.navbar a:hover{
+    color: #45a29e !important;
+    text-decoration: underline;
+    text-decoration-color: #45a29e;
+    text-decoration-thickness: 3px;
+}
+.dropdown-menu{
+    background-color: #1F2836 !important;
+    border-color: #45a29e !important;
+}
+.dropdown-toggle{
+    color: rgb(200,200,200) !important;
+}
