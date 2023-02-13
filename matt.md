@@ -1,0 +1,1 @@
+I will make a database where users can input and store their LoR decks.
