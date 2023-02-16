@@ -1,4 +1,4 @@
-<?php $title = "home page";include("header.php") ?>
+<?php $title = "Home Page";include("header.php") ?>
 
   <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
 
