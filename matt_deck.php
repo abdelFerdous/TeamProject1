@@ -1,4 +1,9 @@
-<?php $stylesheet="deckstyle.css" ;$title = "Deck Database";include("header.php") ?>
+<?php $style1="deckstyle.css" ;
+$title = "Deck Database";
+$style2 = "style1.css";
+$game1 = "Legend of Runterra Deck";
+$logo = "pic/black.jpg";
+include("header.php") ?>
 
 
 
