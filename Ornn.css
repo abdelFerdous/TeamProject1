@@ -1,157 +1,192 @@
+body{
+  background-color: black;
+}
 
 
-@media screen and (max-width: 580px) {
-    .pagename{
-        font-size: 13px !important;
-    }
-    .logoimg{
-        height: 50px !important;
-        width: 50px !important;
-    }
-    .pageimg{
-        height: 30px !important;
-        width: 30px !important;
-    }
-    .article p, .article ul  {
-        margin-left: 30px !important;
-        margin-right: 30px !important;
-        font-size: 15px !important;
-    }
+.fish1{
+  position: absolute;
+  top: 200px;
+   --animate-duration: 0.75s;
+  max-width: 2000px;
+  margin: 200px;
 
-    .article h1, .article h2 {
-        margin-left: 30px !important;
-        margin-right: 30px !important;
-        font-size: 20px !important;
-    }
-    .fishes{
-        margin-top: 100% !important;
-    }
-    .text-muted{
-        font-size: 10px !important;
-    }
-  }
-.row-footer {
-    background-color: #AfAfAf;
-    margin: 200px auto;
-    padding: 20px 0px 20px 0px;
-  }
+}
+.fish{
+  position: relative;
+  top: 0;
+  left: 0;
+  
+}
+.align{
+  text-align: center;
+}
 
-  h1 {
-    color: #66FCF1 !important;
-    font-size: 30px !important;
+.paragraph {
+  color: white;
+  margin: 195px;
+  max-width: 2000px;
+  margin-top: 350px;
+}
+
+
+.card-name{
+  width: 50%;
+  height: 50%;
+}
+.row .card-text {
+  font-size: 22px;
+  max-width: 1000px;
+}
+.row .card-title {
+  font-size: 26px;
+  max-width: 1000px;
+}
+.aboutAuthor p{
+  font-size: 30px;
+}
+
+@media (min-width: 1366px){
+  .paragraph {
+    color: white;
+    margin: 195px;
+    max-width: 2000px;
+    font-size: 20px;
+    margin-top: 330px;
   }
-  
-  
-  
-  .fishes{
-    position: absolute;
-        top: -550px;
-        left: 4px;
-        --animate-duration: 0.75s;
-  
+  .card-name{
+    width: 100%;
+    height: 60%;
   }
-  .fish{
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  
-  
-  body { 
-      max-width: 2300px; 
-      margin: 0 auto !important; 
-      float: none !important; 
-  }
-  p {
-    color: #C5C6C7;
-  }
-  
-  body {
-    background-color: #0b0c10 !important;
-  }
-  
-  .article h2 {
-    color: goldenrod !important;
-    font-style: italic;
-    font-size: 35px;
-  
-  }
-  
-  
-  
-  .tag {
-    opacity: 0;
-    transform: translate(0, 10vh);
-    transition: all 1s;
-  }
-  
-  .tag.visible {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-  
-  .container1 img {
-    width: 10vw;
-    height:auto;
-  }
-  
-  .fish4{
-    position: relative;
-    filter: brightness(50%);
+  .paragraph img{
+    width: 42%;
     
   }
-  .fish5{
-    margin-left:  400px;
-    margin-top: -630px;
-    position: absolute;
-    animation-duration: 1000ms;
-  }
-  .fish6{
-    max-width: 1000px;
-    position: absolute;
-    margin-left: 200px;
-    margin-top: -400px;
-    animation-duration: 500ms;
-  }
   
-  .article h1, h2, p{
-    margin-bottom: 30px;  
-    margin-left: 100px;
-    margin-right: 100px; 
-    text-align: justify; 
+}
+
+  @media (min-width: 768px) and (max-width: 1365.98px){
+    .paragraph {
+      color: white;
+      margin: 150px;
+      max-width: 2000px;
+      font-size: 20px;
+      margin-top: 270px;
+    }
+    .fish1{
+      position: absolute;
+      top: 80px;
+       --animate-duration: 0.75s;
+      max-width: 2000px;
+      margin: 150px;
+    
+    }
+    .text-muted{
+      font-size: 18px;
+    }
+
+    .row .card-text{
+      font-size: 20px;
+    }
+
+    .card-name{
+      width: 100%;
+      height: 60%;
+    }
+    .paragraph img{
+      width: 50%;
+    }
+  
+}
+@media (max-width: 768px){
+  .paragraph {
+    color: white;
+    margin: 50px;
+    max-width: 1000px;
     font-size: 20px;
-    color:#C5C6C7;
+    margin-top: 280px;
   }
-
-  .article li{
-    margin-bottom: 15px;
-  }
-
-  .articleimg{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-bottom: 30px;
+  .fish1{
+    position: absolute;
+    top: 150px;
+     --animate-duration: 0.75s;
+    max-width: 1000px;
+    margin: 50px;
+  
   }
   .card-title{
-    font-family: 'Marsden Compressed';
-    src: local('Marsden Compressed Condensed Heavy'), local('Marsden-Compressed-Condensed-Heavy'),
-        url('Marsden-Cn-Heavy/Marsden-Cn-Heavy.ttf') format('woff2'),
-        url('Marsden-Cn-Heavy/Marsden-Cn-Heavy.woff') format('woff'),
-        url('Marsden-Cn-Heavy/Marsden-Cn-Heavy.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-    color: black;
-    font-size: 40px;
-    text-align: center;
+    font-size: 15px;
   }
-  .article ul{
-    margin-bottom: 30px;  
-    margin-left: 110px;
-    margin-right: 120px; 
-    text-align: justify; 
-    font-size: 20px;
-    color:#C5C6C7;
+  .card-text{
+    font-size: 15px;
   }
+  .row .card-text{
+    font-size: 18px;
+  }
+  .card-name{
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: 20px;
+     width:50%;
+     margin-right: auto;
+  }
+  .row .card-text {
+    font-size: 16px;
+    max-width: 2000px;
+}
+.card-name{
+  width: 100%;
+}
+.paragraph img{
+  width: 50%;
+}
+.aboutAuthor p{
+  font-size: 20px;
+}
+}
+@media (max-width: 576px){
+  .paragraph {
+    color: white;
+    margin: 50px;
+    max-width: 1000px;
+    font-size: 18px;
+    margin-top: 280px;
+  }
+  .fish1{
+    position: absolute;
+    top: 80px;
+     --animate-duration: 0.75s;
+    max-width: 1000px;
+    margin: 50px;
+  
+  }
+  .card-title{
+    font-size: 15px;
+  }
+  .card-text{
+    font-size: 15px;
+  }
+  .row .card-text{
+    font-size: 18px;
+  }
+  .card-name{
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: 20px;
+     width:50%;
+     margin-right: auto;
+  }
+  .row .card-text {
+    font-size: 16px;
+    max-width: 2000px;
+}
+.card-name{
+  width: 100%;
+}
+.aboutAuthor p{
+  font-size: 20px;
+}
 
+.paragraph img{
+  width: 100%;
+}
+}

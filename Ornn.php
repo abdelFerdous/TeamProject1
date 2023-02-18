@@ -1,24 +1,29 @@
-<?php $title = "Ornn";include("header.php") ?>
-    <div class="article">
+<?php $title = "QUICK GAMEPLAY THOUGHTS 13/1: TANK MYTHICS";
+$style2 = "style1.css";
+$style1 = "Ornn.css";
+$game1 = "League of legends";
+$logo = "pic/LOL Logo clear background.png";
+include("header.php"); ?>
+<div class="article">
         <div class="fish"><img src="pic/BlurOrnn.jpg" alt="yuummi blurred" height="auto" width="100%"></div>
-        <div class="card mb-3 fishes animate__animated animate__fadeIn"
-            style="width:80%;margin-left: auto; margin-right: auto; margin-top: auto;">
+        <div class="fish1 card mb-3 fishes animate__animated animate__fadeIn">
             <img src="pic/Base_Ornn_Splash_opt.jpg" class="card-img-top" alt="yuumi">
             <div class="card-body">
+                <div class="align">
                 <h5 class="card-title">QUICK GAMEPLAY THOUGHTS 13/1: TANK MYTHICS</h5>
-                <p class="card-text" style="font-size: 15px; color: black;text-align: center;">Designer RiotMadnessHeroo
+                <p class="card-text">Designer RiotMadnessHeroo
                     talks about the new tank mythic items and how they’ve landed on the Rift.</p>
+                </div>
                 <div class="container text-center">
                     <div class="row">
                         <div class="card-text col-8" style="text-align: left;"><small class="text-muted ">Author:
-                                Tuan Dang</small></div>
-                        <div class="card-text col-4" style="text-align: right;"><small class="text-muted">Written on
-                                25/01/2023</small></div>
+                                Tuan Dang, Ferdous Abdel</small></div>
+                       
                     </div>
                 </div>
             </div>
         </div>
-        <ul style="margin-top: -530px;">
+        <div class="paragraph">
             <p>
                 Preseason has been out for a couple of (long) patches now, and we’ve seen how things have shaken out
                 with the new tank Mythics. Our primary goal with these changes was to shift tanks’ farming and damage
@@ -53,7 +58,7 @@
             <p>
                 With those expectations laid out, let's go over our current assessment of the new Mythics:
             </p>
-            <h2>
+            <h2 style="color:goldenrod">
                 Heartsteel
             </h2>
             <p>
@@ -72,7 +77,7 @@
                 high highs and <b>really</b> low lows), but we believe tanks having high moment/pop-off games is
                 important.
             </p>
-            <h2>Jak'Sho, the Protean</h2>
+            <h2 style="color:goldenrod">Jak'Sho, the Protean</h2>
             <p>
                 <img src="pic/Jaksho.webp" width="28%">
             </p>
@@ -88,7 +93,7 @@
                 with a minor reshape to the item’s outputs to better favor tanks and defensive purchases while lowering
                 its efficiency as a singular durability purchase.
             </p>
-            <h2>
+            <h2 style="color:goldenrod">
                 Radiant Virtue
             </h2>
             <p>
@@ -125,7 +130,7 @@
                 <li>Minorly rework mechanics to make the item more satisfying/appreciable.</li>
 
             </ul>
-            <h2>Iceborn Gauntlet</h2>
+            <h2 style="color:goldenrod">Iceborn Gauntlet</h2>
             <p>
                 <img src="pic/IceBoneGaunlet.webp" width="28%">
             </p>
@@ -139,7 +144,7 @@
                 A couple potential directions among many possibilities would be adding a health ratio to the Spellblade
                 proc or giving the Iceborn user a bonus effect when inside their own slow zone.
             </p>
-            <h2>CONCLUSION</h2>
+            <h2 style="color:goldenrod">CONCLUSION</h2>
             <p>That’s it! I hope this was an informative rundown of our read on the current state of tank Mythic items.
                 We’ll continue to watch and assess how things settle over 13.1, so please keep the feedback coming and
                 have fun with the new items!</p>
@@ -148,29 +153,50 @@
             <p style="text-align: center;font-size: 1.2vw;width: 90%; margin-left: auto;margin-right: auto;">
                 ____________________________________________________________________________________________
             </p>
-            <p style="margin-left: auto;width: 50%;text-align: justify;margin-right: auto;"><b>About
-                    the author</b></p>
-            <div class="card mb-3"
-                style="border-radius: 20px;margin-left: auto;margin-top: 20px; width:50%;margin-right: auto;">
+            <div class="aboutAuthor">
+            <p><b>About
+                    the author</b></p></div>
+            <div class="card mb-3 card-name">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="pic/jerry.jpg" class="img-fluid rounded-start" alt="..." height="800" width="900">
+                        <img src="pic/jerry.jpg" class="img-fluid rounded-start" alt="..." height="400" width="400">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body" style="text-align: justify;">
+                        <div class="card-body" >
                             <h5 class="card-title" style="color: goldenrod;"><b>Beacon</b></h5>
-                            <p class="card-text" style="color: #0b0c10;margin: 0;">Real name: Dang Minh "Beacon" Tuan
+                            <p class="card-text" style="color: #0b0c10;">+Real name: Dang Minh Tuan
                             </p>
-                            <p class="card-text" style="color: #0b0c10;margin: 0;">Major: Computer Application at HAMK
+                            <p class="card-text" style="color: #0b0c10;">+Major: Computer Application at HAMK
                                 (BBCAP22A3)</p>
-                            <p class="card-text" style="color: #0b0c10;margin: 0;">Games I have played: DotA 2, CS:GO,
+                            <p class="card-text" style="color: #0b0c10;">+Games I have played: DotA 2, CS:GO,
                                 LoL,
                                 World of Warcraft, FIFA23, Valorant</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="card mb-3 card-name">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="pic/0.jpg" class="img-fluid rounded-start" alt="..." height="400" width="400">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body" >
+                            <h5 class="card-title" style="color: goldenrod;"><b>Ferdous Abdel</b></h5>
+                            <p class="card-text" style="color: #0b0c10;">+Real name: Ferdous Abdelqoddous
+                            </p>
+                            <p class="card-text" style="color: #0b0c10;">+Major: Computer Application at HAMK
+                                (BBCAP22A3)</p>
+                            <p class="card-text" style="color: #0b0c10;">+Games I have played: DotA 2, CS:GO,
+                                LoL,
+                                World of Warcraft</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </div>
-    <?php include("footer.php") ?>
+    <<?php $margin = "100px";
+include("footer.php") ?>
