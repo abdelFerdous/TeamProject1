@@ -1,4 +1,8 @@
-<?php $title="loging page" ; include("header.php")?>
+<?php $title="loging page" ;
+$style1 = "style1.css";
+$logo = "pic/black.jpg";
+$game1 = "Registration";
+ include("header.php")?>
 
 <form action="" method="post">
 <input type="text" name="fname" placeholder="First Name*" required><br><br>
