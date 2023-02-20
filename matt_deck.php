@@ -48,10 +48,30 @@ Enter you Deck here!
         <option value="None"> None </option>
     </select>
     </div>
-    <input type="submit" value="Submit" name="submit">
+    <input type="submit" value="Submit" name="Submit">
 </form>
 </div>
 
+<?php
+if(isset($_POST["Submit"])){
+$email = $_POST['email'];
+$deckName = $_POST['deckName'];
+$deckCode = $_POST['deckCode'];
+$region1 = $_POST['region1'];
+$region2 = $_POST['region2'];
+include 'deckdb.php';
+$sql = "insert into matt_decks (email, deckName, deckCode, region1, region2)
+values('$email', '$deckName', '$deckCode', '$region1', '$region2')";
+
+if ($conn ->query($sql) === TRUE){
+        echo "Your information was added successfully";
+}
+else {
+    echo "ERROR: Your information was not added successfully" . $conn->error;
+}
+}
+
+?>
 
 </body>
 
