@@ -6,10 +6,12 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
 body{
-  background: #fec107;
+  background: #0b0c10;
   padding: 0 10px;
 }
+
 .wrapper{
   margin-top: 25px;
   max-width: 500px;
