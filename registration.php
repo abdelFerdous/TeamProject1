@@ -1,4 +1,4 @@
-<?php $stylesheet="regstyle.css";$title="Registration Form" ; include("header.php") ?><br><br><br>
+<?php $style2="regstyle.css";$title="Registration Form" ; include("header.php") ?><br><br><br>
 <div class="wrapper">
     <div class="title">
       Registration Form

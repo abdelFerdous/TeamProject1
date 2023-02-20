@@ -1,4 +1,4 @@
-<?php  $stylesheet="signinstyle.css";$title="Sign in" ; include("header.php") ?><br><br>
+<?php  $style1="signinstyle.css";$title="Sign in" ; include("header.php") ?><br><br>
 <div class="wrapper">
 <div class="login-box">
     <img src="pic/avatar.png" class="avatar">
