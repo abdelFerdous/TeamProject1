@@ -1,4 +1,4 @@
-<?php $title="Skin Database" ; include("header.php"); include("skinarrays.php"); ?>
+<?php $title="Skin Database" ; include("header.php"); include("skinarrays.php");$style1="style1.css"; ?>
 <form method="post" action="">
 <div class="row" style="margin: 0">
 <div class="col-md" style="padding-left: 0; padding-right:10px">
