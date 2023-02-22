@@ -11,7 +11,7 @@ include("header.php") ?>
     <div class="title">
 Enter you Deck here!
     </div>
-<form method="post" action="">
+<form name="deckform" method="post" action="" onsubmit="return deckval()">
     <div class="form-group">
     <input type="text" name="email" class="form-control" placeholder="Account Email:" required> <br><br>
     <input type="text" name="deckName" class="form-control" placeholder="Deck Name:" required> <br><br>
