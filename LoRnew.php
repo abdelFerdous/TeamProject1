@@ -26,7 +26,7 @@ include("header.php"); ?>
                         🤘 Submit to the Legends of Runeterra: World Ender anthem, Predator (World Ender Remix) by
                         Pentakill.
                     </p>
-                    <a href="TFT1.html" class="stretched-link"></a>
+                    <a href="https://www.youtube.com/watch?v=j9YA0P0wCrQ" class="stretched-link"></a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ include("header.php"); ?>
             </div>
             <div class="col-md-6 p-4 ps-md-0 ">
                 <p style="color: rgb(47, 226, 226);font-size: 15px;text-align: left;">MEDIA</p>
-                <h2 style="text-align: left; color: black; "><b>The Darkin Saga: World Ende</b> </h2>
+                <h2 style="text-align: left; color: black; "><b>The Darkin Saga: World Ender</b> </h2>
                 <p style="text-align: left; color: black;font-style: normal;"> Read for details on the fifth expansion
                     of the Worldwalker set and the final
                     expansion of The Darkin Saga.</p>
