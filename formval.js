@@ -18,11 +18,3 @@ function deckval(){
         return false;
     }
 }                                                                                                                                          
-
-function email(){
-    let email=(document.deckform.email.value).trim();
-    if (email.length<10){
-        alert("Email must have at least 10 characters");
-        return false;
-    }
-}
