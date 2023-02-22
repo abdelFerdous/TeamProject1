@@ -1,4 +1,9 @@
-<?php $style2="regstyle.css";$title="Registration Form" ; include("header.php") ?><br><br><br>
+<?php $title = "TFT new";
+$style1 = "style1.css";
+$style2 = "regstyle.css";
+$game1 = "Registration";
+$logo = "pic/tft logo.png";
+include("header.php"); ?><br><br><br>
 <div class="wrapper">
     <div class="title">
       Registration Form
