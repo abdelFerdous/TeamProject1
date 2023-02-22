@@ -48,9 +48,25 @@ Enter you Deck here!
         <option value="None"> None </option>
     </select>
     </div>
+    <br>
     <input type="submit" value="Submit" name="Submit">
 </form>
 </div>
+
+<div class="wrapper">
+    <div class="title">
+Check Your Decks Here!
+    </div>
+<form name="checkform" method="post" action="deckcheck.php" onsubmit="return checkval()">
+    <div class="form-group">
+    <input type="text" name="checkEmail" class="form-control" placeholder="Account Email:" required> <br><br>
+    </div>
+    <br>
+    <input type="submit" value="Check" name="Check">
+</div>
+
+
+
 
 <?php
 if(isset($_POST["Submit"])){
