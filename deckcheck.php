@@ -1,11 +1,13 @@
-<?php $title = "Deck Checker"; include("header.php");
+<?php $title = "Deck Checker";
+
 $style1="deckstyle.css";
 $style2 = "style1.css"; 
+$game1 = "DeckCheck";
 $logo = "pic/black.jpg";
 include 'deckdb.php';
-
+include("header.php");
 ?>
-
+<br><br><br>
 
 <?php
 $checkEmail = $_POST['checkEmail'];

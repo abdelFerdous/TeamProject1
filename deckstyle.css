@@ -7,6 +7,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+h2 {
+  color: white;
+  text-align: center;
+}
+
 body{
   background: #0b0c10;
   padding: 0 10px;
@@ -49,4 +54,8 @@ body{
   .wrapper .form .inputfield.terms{
     flex-direction: row;
   }
+}
+
+.table>:not(caption)>*>* {
+  background-color: #f1f1f1 !important;
 }

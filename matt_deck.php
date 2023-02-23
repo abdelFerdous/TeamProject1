@@ -53,6 +53,26 @@ Enter you Deck here!
 </form>
 </div>
 
+<?php
+if(isset($_POST["Submit"])){
+$email = $_POST['email'];
+$deckName = $_POST['deckName'];
+$deckCode = $_POST['deckCode'];
+$region1 = $_POST['region1'];
+$region2 = $_POST['region2'];
+include 'deckdb.php';
+$sql = "insert into matt_decks (email, deckName, deckCode, region1, region2)
+values('$email', '$deckName', '$deckCode', '$region1', '$region2')";
+
+if ($conn ->query($sql) === TRUE){
+        echo "<h2>Your information was added successfully</h2>";
+}
+else {
+    echo "ERROR: Your information was not added successfully" . $conn->error;
+}
+}
+?>
+
 <div class="wrapper">
     <div class="title">
 Check Your Decks Here!
@@ -68,26 +88,7 @@ Check Your Decks Here!
 
 
 
-<?php
-if(isset($_POST["Submit"])){
-$email = $_POST['email'];
-$deckName = $_POST['deckName'];
-$deckCode = $_POST['deckCode'];
-$region1 = $_POST['region1'];
-$region2 = $_POST['region2'];
-include 'deckdb.php';
-$sql = "insert into matt_decks (email, deckName, deckCode, region1, region2)
-values('$email', '$deckName', '$deckCode', '$region1', '$region2')";
 
-if ($conn ->query($sql) === TRUE){
-        echo "Your information was added successfully";
-}
-else {
-    echo "ERROR: Your information was not added successfully" . $conn->error;
-}
-}
-
-?>
 
 </body>
 
