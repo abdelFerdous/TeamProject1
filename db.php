@@ -1,8 +1,8 @@
 <?php 
 $servername ="db";
-$username="signupdb";
+$username="registrationdb";
 $password ="password";
-$dbname="signupdb";
+$dbname="registrationdb";
 //creating connection
 $connection=new mysqli($servername , $username , $password , $dbname);
 //check connection
