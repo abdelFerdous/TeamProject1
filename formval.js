@@ -18,3 +18,12 @@ function deckval(){
         return false;
     }
 }                                                                                                                                          
+
+
+function checkval(){
+    let checkEmail=(document.checkform.checkEmail.value).trim();
+    if (checkEmail.length<10){
+        alert("Email must have at least 10 characters");
+        return false;
+    }
+}
