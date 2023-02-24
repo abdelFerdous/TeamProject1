@@ -24,7 +24,7 @@ include("header.php"); ?><br><br><br>
        </div>  
       <div class="inputfield">
           <label>E-mail</label>
-          <input type="text" class="input" name="email">
+          <input type="text" class="input" name="email" id="email" onblur="ValidateEmail()">
        </div> 
         <!-- <div class="inputfield">
           <label>Gender</label>
