@@ -38,7 +38,7 @@ include("header.php"); ?><br><br><br>
        </div>  -->
         <div class="inputfield">
           <label>Phone Number</label>
-          <input type="text" class="input" name="phone">
+          <input type="text" class="input" name="phone" id="phone" onblur="ValidatePhone()">
        </div> 
       <div class="inputfield">
           <label>Password</label>
