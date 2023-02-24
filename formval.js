@@ -43,7 +43,7 @@ return false;
 function ValidatePhone()
 {
 let phone=document.getElementById("phone").value; 
-var phoneformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var phoneformat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
 if(phone.match(phoneformat)){
 alert("Valid phone number!");
 return true;
