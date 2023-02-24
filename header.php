@@ -73,6 +73,9 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="matt_deck.php" style="margin-right: 10px; color: white">Deck Database</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="aboutUs.php" style="margin-right: 10px; color: white">About
                                     us</a>
                             </li>
