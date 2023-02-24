@@ -42,7 +42,7 @@ include("header.php"); ?><br><br><br>
        </div> 
       <div class="inputfield">
           <label>Password</label>
-          <input type="password" class="input" name="password">
+          <input type="password" class="input" name="password" id="pswd1">
        </div> 
       <!-- <div class="inputfield">
           <label>Address</label>
@@ -50,7 +50,7 @@ include("header.php"); ?><br><br><br>
        </div>  -->
       <div class="inputfield">
           <label>Confirm Password</label>
-          <input type="password" class="input" name ="cpassword">
+          <input type="password" class="input" name ="cpassword" id="pswd2" onblur="matchPassword()">
        </div> 
       <div class="inputfield terms">
           <label class="check">
