@@ -1,4 +1,4 @@
-<?php  $style1="signinstyle.css";$title="Sign in" ;$logo="pic/avatar.png" ;
+<?php  $style1="signinstyle.css";$title="Sign in" ;$logo="pic/avatar.png";$style2 = "style1.css" ;
 $game1="Sign in";
 include("header.php") ?><br><br>
 <div class="wrapper">
@@ -17,7 +17,7 @@ include("header.php") ?><br><br>
         
 </div>
 </div>
-  </body>
+  
 
 
 
