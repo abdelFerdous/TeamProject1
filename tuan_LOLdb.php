@@ -2,7 +2,7 @@
 $servername="db";
 $username="capp1";
 $password="password";
-$dbname="users";
+$dbname="lolmeta";
 // creating connection
 
 $conn = new mysqli ($servername, $username, $password, $dbname);

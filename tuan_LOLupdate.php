@@ -1,70 +1,86 @@
-<?php 
-$title = "Deck Database";
+<?php
+$title = "Update Item";
 $style2 = "style1.css";
-$game1 = "League Of Legends meta";
+$style1 = "tuan_deck.css";
+$game1 = "League Of Legends build";
 $logo = "pic/LOL Logo clear background.png";
 include("header.php");
-$a = $_GET['id'];
+$a = $_GET['item'];
+$query = "SELECT * FROM lolmeta";
 include('tuan_LOLdb.php');
-$result = mysqli_query($conn,"Select * from capp1 ");
-$row = mysqli_fetch_array($result)
-
+$result = mysqli_query($conn, "SELECT * FROM metalol");
+if ($result === false) {
+  echo "Error executing query: " . mysqli_error($conn);
+} else {
+  $row = mysqli_fetch_array($result);
+  // Rest of your code
+}
 ?>
-<h2> Update your information below</h2>
-<form method="post" action = "" style="margin-top: 100px">
-<div class = "form-group">
-  <select name="role">
-    <option value="Top">Top</option>
-    <option value="Mid">Mid</option>
-    <option value="ADC">ADC</option>
-    <option value="Support">Support</option>
-    <option value="Jungle">Jungle</option>
-  </select></div><br><br>
-  <div class = "form-group">
-  <input type="text" name="champion" placeholder="Champion" required><br><br></div>
-  <div class = "form-group">
-  <textarea name="item" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea></div>
-  <br><br><div class = "form-group">
-  <input type="submit" value= "Update your info " name = "update"><br><br></div>
-  <div class = "form-group">
-  <input type="submit" value= "Delete your info " name = "delete"><br><br></div>
+<div class="wrapper" style="margin-top:100px;">
+  <div class="title">
+    Update this item
+  </div>
+  <p>Attention: When you click the item, it will change the data of the item (it won't add new item)</P>
+  <form name="deckform" method="post" action="">
+    <input type="text" class="form-control" name="item" placeholder="Item" ><br><br>
+    <input type="text" class="form-control" name="price" placeholder="Price"><br><br>
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5"></textarea><br><br>
+    <select name="role" class="form-control" >
+      <option value="Mid">-- Role --</option>
+      <option value="Mid">Controller</option>
+      <option value="Fighter">Fighter</option>
+      <option value="Marksman">Marksman</option>
+      <option value="Slayer">Slayer</option>
+      <option value="Tank">Tank</option>
+      <option value="Specialist">Specialist</option>
+      <div class="form-group">
+</select> 
+<input type="submit" type="button" class="btn btn-primary" value="Update the item " name="update" style="margin-top: 20px;"><br><br>
 
-  <br><br>
+<div class="form-group">
+  <input type="submit" type="button" class="btn btn-primary" value="Delete the item " name="delete"><br><br>
+</div> 
+</div>
+
+
+<br><br>
 
 </form>
-<?php 
-if (isset($_POST['update'])){
-  $role = $_POST['role'];
-  $champion = $_POST['champion'];
+<?php
+include 'tuan_LOLdb.php';
+if (isset($_POST['update'])) {
   $item = $_POST['item'];
-  $query = mysqli_query($conn,"UPDATE capp1 set role='$role',champion='$champion',item='$item'");
-
-if($query){
-  echo"<h2> Your infomation is updated successfully</h2>";
-}
-else{
-  echo"<h2> Record not modified</h2>";
-}
+  $price = $_POST['price'];
+  $description = $_POST['description'];
+  $role = $_POST['role'];
+  $query = "UPDATE lolmeta SET item='$item', price='$price', description='$description', role='$role'";
+  $query_run = mysqli_query($conn, $query);
+  if ($query_run) {
+    echo '<script>alert("Data Updated Successfully");</script>';
+    header("Location: tuan_LOLsearch.php");
+  } else {
+    echo '<script>alert("Error Occurred While Updating Data");</script>';
+  }
 }
 ?>
-<?php 
-if (isset($_POST['delete'])){
-  $role = $_POST['role'];
-  $champion = $_POST['champion'];
-  $item = $_POST['item'];
-  $query = mysqli_query($conn,"DELETE FROM capp1");
 
-if($query){
-  echo"<h2> Your infomation is deleted successfully</h2>";
-}
-else{
-  echo"<h2> Record not modified</h2>";
-}
+<?php
+include 'tuan_LOLdb.php';
+if (isset($_POST['delete'])) {
+  $item = $_POST['item'];
+  $price = $_POST['price'];
+  $description = $_POST['description'];
+  $role = $_POST['role'];
+  $query = "DELETE FROM lolmeta";
+  $query_run = mysqli_query($conn, $query);
+  if ($query_run) {
+    echo '<script>alert("Data Updated Successfully");</script>';
+    header("Location: tuan_LOLsearch.php");
+  } else {
+    echo '<script>alert("Error Occurred While Updating Data");</script>';
+  }
 }
 ?>
-<?php 
+<?php
 include 'footer.php';
 ?>
-
-
-

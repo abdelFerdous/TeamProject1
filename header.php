@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <title><?php echo $title ?></title>
+    <title>
+        <?php echo $title ?>
+    </title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="formval.js"> </script>
     <link rel="stylesheet"
@@ -19,10 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?php echo $style2 ?>">
     <link rel="stylesheet" href="<?php echo $style1 ?>">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -34,8 +33,7 @@
             <nav class="navbar navbar-expand-lg bg-dark">
                 <div class="container-fluid">
                     <div class="margin1">
-                        <a class="navbar-brand" href="index.html"> <img src="pic/logoFinal.png" alt="Bootstrap"
-                                ></a>
+                        <a class="navbar-brand" href="index.html"> <img src="pic/logoFinal.png" alt="Bootstrap"></a>
                         <img src="<?php echo $logo ?>" alt="Bootstrap" style="margin-left: -15px;"><a
                             style="color: white;"><?php echo $game1 ?></a>
                     </div>
@@ -72,9 +70,29 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="matt_deck.php" style="margin-right: 10px; color: white">Deck Database</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="color: white;">
+                                    League of Legend
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark ">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="tuan_LOLadd.php"
+                                            style="margin-right: 10px; color: white">Add LOL item</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="tuan_searchLOL.php"
+                                            style="margin-right: 10px; color: white">Search LOL item</a>
+                                    </li>
+
+                                </ul>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="matt_deck.php" style="margin-right: 10px; color: white">Deck
+                                    Database</a>
+                            </li>
+
+
                             <li class="nav-item">
                                 <a class="nav-link" href="aboutUs.php" style="margin-right: 10px; color: white">About
                                     us</a>
