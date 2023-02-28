@@ -5,24 +5,23 @@ $game1 = "Search item";
 $logo = "pic/LOL Logo clear background.png";
 include('header.php');
 ?>
+
 <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-header" >
-                        <h4>Check the item at here </h4>
+                    <h4>Search for an item</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-7">
-
                                 <form action="" method="GET">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="search" required value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" class="form-control" placeholder="Search data">
+                                    <input type="text" name="search" required value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" class="form-control" placeholder="Enter item name or description">
                                         <button type="submit" class="btn btn-primary">Search</button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>
@@ -44,14 +43,11 @@ include('header.php');
                             <tbody>
                                 <?php 
                                     include('tuan_LOLdb.php');
-
-                                    if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM lolmeta WHERE CONCAT(item,price,role,description) LIKE '%$filtervalues%' ";
+                                $filtervalues = isset($_GET['search']) ? $_GET['search'] : '';
+                                $query = "SELECT * FROM lolmeta WHERE CONCAT(item, price, role, description) LIKE '%$filtervalues%' ";
                                         $query_run = mysqli_query($conn, $query);
 
-                                        if($query_run !== false && mysqli_num_rows($query_run) > 0)
+                                if($query_run && mysqli_num_rows($query_run) > 0)
                                         {
                                             foreach($query_run as $items)
                                             {
@@ -73,7 +69,7 @@ include('header.php');
                                                 </tr>
                                             <?php
                                         }
-                                    }
+                                    
                                 ?>
                             </tbody>
                         </table>
@@ -82,3 +78,5 @@ include('header.php');
             </div>
         </div>
     </div>
+
+<?php include 'footer.php'; ?>

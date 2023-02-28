@@ -30,10 +30,7 @@ include("header.php") ?>
   </select>
   <br><br>
   <input type="submit" type="button" class="btn btn-primary" value="Submit" name="submit">
-
-</form>
-</div>
-<?php
+  <?php
   if (isset($_POST["submit"])){
     $item = $_POST['item'];
     $price = $_POST['price'];
@@ -50,3 +47,6 @@ include("header.php") ?>
     }
   }
 ?>
+</form>
+</div>
+<?php include('footer.php') ?>
