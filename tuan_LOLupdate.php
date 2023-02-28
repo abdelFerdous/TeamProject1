@@ -20,19 +20,20 @@ if ($result === false) {
   <div class="title">
     Update this item
   </div>
-  <p>Attention: When you click the item, it will change the data of the item (it won't add new item)</P>
+  <p>Attention: The description box is empty when you click the item. If you don't want to change anything, return. If you want to update, you need to type everything again in description </p>
   <form name="deckform" method="post" action="">
-    <input type="text" class="form-control" name="item" placeholder="Item" value="<?php echo $row['item']; ?>"><br><br>
-    <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>"><br><br>
-    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" ></textarea><br><br>
-    <select name="role" class="form-control" >
-      <option value="Mid">-- Role --</option>
-      <option value="Mid">Controller</option>
+    <input type="text" class="form-control" name="item" placeholder="Item" value="<?php echo $row['item']; ?>" required><br><br>
+    <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>" required><br><br>
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" required></textarea><br><br>
+    <select name="role" class="form-control" value="<?php echo $row['role']; ?>">
+    <option value="Mid">Controller</option>
       <option value="Fighter">Fighter</option>
       <option value="Marksman">Marksman</option>
       <option value="Slayer">Slayer</option>
       <option value="Tank">Tank</option>
       <option value="Specialist">Specialist</option>
+      <option value="Specialist">Mage</option>
+      <option value="Specialist">All</option>
       <div class="form-group">
     </select>
 <input type="submit" type="button" class="btn btn-primary" value="Update the item " name="update" style="margin-top: 20px;"><br><br>
@@ -49,10 +50,10 @@ if ($result === false) {
 <?php
 include 'tuan_LOLdb.php';
 if (isset($_POST['update'])) {
-  $item = $_POST['item'];
-  $price = $_POST['price'];
-  $description = $_POST['description'];
-  $role = $_POST['role'];
+$item = mysqli_real_escape_string($conn, $_POST['item']);
+$price = mysqli_real_escape_string($conn, $_POST['price']);
+$description = mysqli_real_escape_string($conn, $_POST['description']);
+$role = mysqli_real_escape_string($conn, $_POST['role']);
   $query = "UPDATE lolmeta SET item='$item', price='$price', description='$description', role='$role' WHERE item='$item'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
@@ -67,10 +68,10 @@ if (isset($_POST['update'])) {
 <?php
 include 'tuan_LOLdb.php';
 if (isset($_POST['delete'])) {
-  $item = $_POST['item'];
-  $price = $_POST['price'];
-  $description = $_POST['description'];
-  $role = $_POST['role'];
+  $item = mysqli_real_escape_string($conn, $_POST['item']);
+$price = mysqli_real_escape_string($conn, $_POST['price']);
+$description = mysqli_real_escape_string($conn, $_POST['description']);
+$role = mysqli_real_escape_string($conn, $_POST['role']);
   $query = "DELETE FROM lolmeta WHERE item = '$item'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {

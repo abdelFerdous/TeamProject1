@@ -27,16 +27,19 @@ include("header.php") ?>
       <option value="Slayer">Slayer</option>
       <option value="Tank">Tank</option>
       <option value="Specialist">Specialist</option>
+      <option value="Specialist">Mage</option>
+      <option value="Specialist">All</option>
   </select>
   <br><br>
   <input type="submit" type="button" class="btn btn-primary" value="Submit" name="submit">
   <?php
+  include 'tuan_LOLdb.php';
   if (isset($_POST["submit"])){
-    $item = $_POST['item'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $role = $_POST['role'];
-    include 'tuan_LOLdb.php';
+    $item = mysqli_real_escape_string($conn, $_POST['item']);
+$price = mysqli_real_escape_string($conn, $_POST['price']);
+$description = mysqli_real_escape_string($conn, $_POST['description']);
+$role = mysqli_real_escape_string($conn, $_POST['role']);
+    
     $sql = "insert into lolmeta(item, price, description, role)
     values ('$item', '$price', '$description', '$role')";
     if ($conn ->query($sql) === true) {

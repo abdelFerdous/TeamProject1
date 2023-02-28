@@ -13,3 +13,6 @@ I just made a new form which allow user to update the meta of each champion. Alt
 
 27/02/2022:
 I have finished my item's database. It works very good and I really satisfy with my database. I can search the item that I want to see. I can update the pic to database if it is possile.
+
+28/02/2022:
+I have fixed the error: input special character. I why try to update add picture to database, if it is posiible

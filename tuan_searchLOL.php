@@ -18,7 +18,7 @@ include('header.php');
                             <div class="col-md-7">
                                 <form action="" method="GET">
                                     <div class="input-group mb-3">
-                                    <input type="text" name="search" required value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" class="form-control" placeholder="Enter item name or description">
+                                    <input type="text" name="search" required value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" class="form-control" placeholder="Enter item name ">
                                         <button type="submit" class="btn btn-primary">Search</button>
                                     </div>
                                 </form>
@@ -44,7 +44,7 @@ include('header.php');
                                 <?php 
                                     include('tuan_LOLdb.php');
                                 $filtervalues = isset($_GET['search']) ? $_GET['search'] : '';
-                                $query = "SELECT * FROM lolmeta WHERE CONCAT(item, price, role, description) LIKE '%$filtervalues%' ";
+                                $query = "SELECT * FROM lolmeta WHERE item LIKE '%$filtervalues%' OR role LIKE '%$filtervalues%' OR price LIKE '%$filtervalues%' OR description LIKE '%$filtervalues%' ";
                                         $query_run = mysqli_query($conn, $query);
 
                                 if($query_run && mysqli_num_rows($query_run) > 0)
