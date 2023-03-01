@@ -5,10 +5,10 @@ $style1 = "tuan_deck.css";
 $game1 = "League Of Legends build";
 $logo = "pic/LOL Logo clear background.png";
 include("header.php");
-$a = $_GET['item'];
-$query = "SELECT * FROM lolmeta where item = '$a";
+$a = $_GET['id'];
+$query = "SELECT * FROM tuan_database WHERE id = $a";
 include('tuan_LOLdb.php');
-$result = mysqli_query($conn, "SELECT * FROM lolmeta");
+$result = mysqli_query($conn, $query);
 if ($result === false) {
   echo "Error executing query: " . mysqli_error($conn);
 } else {
@@ -24,7 +24,8 @@ if ($result === false) {
   <form name="deckform" method="post" action="">
     <input type="text" class="form-control" name="item" placeholder="Item" value="<?php echo $row['item']; ?>" required><br><br>
     <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>" required><br><br>
-    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" required></textarea><br><br>
+    <!-- Rest of your form fields here -->
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" ></textarea><br><br>
     <select name="role" class="form-control" value="<?php echo $row['role']; ?>">
     <option value="Mid">Controller</option>
       <option value="Fighter">Fighter</option>
@@ -50,11 +51,12 @@ if ($result === false) {
 <?php
 include 'tuan_LOLdb.php';
 if (isset($_POST['update'])) {
-$item = mysqli_real_escape_string($conn, $_POST['item']);
-$price = mysqli_real_escape_string($conn, $_POST['price']);
-$description = mysqli_real_escape_string($conn, $_POST['description']);
-$role = mysqli_real_escape_string($conn, $_POST['role']);
-  $query = "UPDATE lolmeta SET item='$item', price='$price', description='$description', role='$role' WHERE item='$item'";
+  $item = mysqli_real_escape_string($conn, $_POST['item']);
+  $price = mysqli_real_escape_string($conn, $_POST['price']);
+  $description = mysqli_real_escape_string($conn, $_POST['description']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
+  
+  $query = "UPDATE tuan_database SET item='$item', price='$price', description='$description', role='$role' WHERE id = '$a'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
     echo '<script>alert("Data Updated Successfully");</script>';
@@ -72,7 +74,7 @@ if (isset($_POST['delete'])) {
 $price = mysqli_real_escape_string($conn, $_POST['price']);
 $description = mysqli_real_escape_string($conn, $_POST['description']);
 $role = mysqli_real_escape_string($conn, $_POST['role']);
-  $query = "DELETE FROM lolmeta WHERE item = '$item'";
+  $query = "DELETE FROM tuan_database WHERE item = '$item'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
     echo '<script>alert("Data Deleted Successfully");</script>';

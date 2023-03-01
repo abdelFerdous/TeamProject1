@@ -1,4 +1,4 @@
-<?php 
+<?php
 $title = "Search Item";
 $style1 = "style1.css";
 $game1 = "Search item";
@@ -7,76 +7,77 @@ include('header.php');
 ?>
 
 <div class="container" style="margin-top: 100px;">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card mt-4">
-                    <div class="card-header" >
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mt-4">
+                <div class="card-header">
                     <h4>Search for an item</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <form action="" method="GET">
-                                    <div class="input-group mb-3">
-                                    <input type="text" name="search" required value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" class="form-control" placeholder="Enter item name ">
-                                        <button type="submit" class="btn btn-primary">Search</button>
-                                    </div>
-                                </form>
-                            </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <form action="" method="GET">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="search" required
+                                        value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>"
+                                        class="form-control" placeholder="Enter item name ">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-12">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Role</th>
-                                    <th>Price</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                    include('tuan_LOLdb.php');
-                                $filtervalues = isset($_GET['search']) ? $_GET['search'] : '';
-                                $query = "SELECT * FROM lolmeta WHERE item LIKE '%$filtervalues%' OR role LIKE '%$filtervalues%' OR price LIKE '%$filtervalues%' OR description LIKE '%$filtervalues%' ";
-                                        $query_run = mysqli_query($conn, $query);
+        <div class="col-md-12">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                
+                                <th>Item</th>
+                                <th>Role</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            include('tuan_LOLdb.php');
+                            $filtervalues = isset($_GET['search']) ? $_GET['search'] : '';
+                            $query = "SELECT * FROM tuan_database WHERE item LIKE '%$filtervalues%' OR role LIKE '%$filtervalues%' OR price LIKE '%$filtervalues%' OR description LIKE '%$filtervalues%' ";
+                            $query_run = mysqli_query($conn, $query);
 
-                                if($query_run && mysqli_num_rows($query_run) > 0)
-                                        {
-                                            foreach($query_run as $items)
-                                            {
-                                                ?>
-                                                <tr>
-                                                <td><a href='tuan_LOLupdate.php?id=<?= $items['item'] ?>'><?= $items['item'] ?></a></td>
-                                                    <td><?= $items['role']; ?></td>
-                                                    <td><?= $items['price']; ?></td>
-                                                    <td><?= nl2br($items['description']) ?></td>
-                                                </tr>
-                                                <?php
-                                            }
-                                        }
-                                        else
-                                        {
-                                            ?>
-                                                <tr>
-                                                    <td colspan="4">No Record Found</td>
-                                                </tr>
-                                            <?php
-                                        }
-                                    
+                            if ($query_run && mysqli_num_rows($query_run) > 0) {
+                                foreach ($query_run as $items) {
+                                    ?>
+                                    <tr>
+                                        <td><a href='tuan_LOLupdate.php?id=<?= $items['id'] ?>'><?= $items['item'] ?></a></td>
+                                        
+                                        <td><?= $items['role'] ?></td>
+                                        <td><?= $items['price'] ?></td>
+                                        <td><?= nl2br($items['description']) ?></td>
+                                    </tr>
+                                    <?php
+                                }
+                            
+                            } else {
                                 ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                <tr>
+                                    <td colspan="5">No Record Found</td>
+                                </tr>
+                                <?php
+                            }
+
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-<?php include 'footer.php'; ?>
+<?php include('footer.php') ?>

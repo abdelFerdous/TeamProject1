@@ -10,7 +10,7 @@ include("header.php") ?>
 
 
 
-<div class="wrapper" style= "margin-top:100px;">
+<div class="wrapper" style= "margin-top:100px; ">
   <div class="title">
     Add League of Legends item
   </div>
@@ -40,7 +40,7 @@ $price = mysqli_real_escape_string($conn, $_POST['price']);
 $description = mysqli_real_escape_string($conn, $_POST['description']);
 $role = mysqli_real_escape_string($conn, $_POST['role']);
     
-    $sql = "insert into lolmeta(item, price, description, role)
+    $sql = "insert into tuan_database(item, price, description, role)
     values ('$item', '$price', '$description', '$role')";
     if ($conn ->query($sql) === true) {
       echo "Your information is added successfully";
