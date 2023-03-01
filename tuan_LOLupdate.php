@@ -13,7 +13,7 @@ if ($result === false) {
   echo "Error executing query: " . mysqli_error($conn);
 } else {
   $row = mysqli_fetch_array($result);
-  // Rest of your code
+  
 }
 ?>
 <div class="wrapper" style="margin-top:100px;">
@@ -27,7 +27,7 @@ if ($result === false) {
       required><br><br>
     <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>"
       required><br><br>
-    <!-- Rest of your form fields here -->
+   
     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5"></textarea><br><br>
     <select name="role" class="form-control">
       <option value="Controller" <?php if ($row['role'] == 'Controller') {
