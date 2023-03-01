@@ -21,14 +21,16 @@ include("header.php") ?>
   <textarea class="form-control" placeholder="Description" name="description" id="exampleFormControlTextarea1" rows="5"></textarea><br><br>
   <select name="role" class="form-control"><br><br>
   <option value="Mid">-- Role --</option>
-      <option value="Mid">Controller</option>
+    <option value="Controller">Controller</option>
       <option value="Fighter">Fighter</option>
       <option value="Marksman">Marksman</option>
       <option value="Slayer">Slayer</option>
       <option value="Tank">Tank</option>
+      <option value="Support">Support</option>
       <option value="Specialist">Specialist</option>
-      <option value="Specialist">Mage</option>
-      <option value="Specialist">All</option>
+      <option value="Mage">Mage</option>
+      <option value="Assassin">Assassin</option>
+      <option value="All">All</option>
   </select>
   <br><br>
   <input type="submit" type="button" class="btn btn-primary" value="Submit" name="submit">
