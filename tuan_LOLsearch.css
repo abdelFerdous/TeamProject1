@@ -1,0 +1,26 @@
+.container{
+    margin-top: 100px;
+}
+body{
+    background-color: black;
+}
+.card-header{
+    color: #6be0d9;;
+    
+}
+.card-body{
+    background-color: bisque;
+}
+
+.table-bordered{
+    border-color: black;
+}
+
+a{
+    color: black;
+    font-size: normal;
+}
+
+a:hover{
+    color: #6be0d9;
+}

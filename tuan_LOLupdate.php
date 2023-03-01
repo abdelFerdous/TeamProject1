@@ -13,30 +13,35 @@ if ($result === false) {
   echo "Error executing query: " . mysqli_error($conn);
 } else {
   $row = mysqli_fetch_array($result);
-  
+
 }
 ?>
 <div class="wrapper" style="margin-top:100px;">
   <div class="title">
     Update this item
   </div>
-  <p>Attention: The description box is empty when you click the item. If you don't want to change anything, return. If
-    you want to update, you need to type everything again in description </p>
+
   <form name="deckform" method="post" action="">
     <input type="text" class="form-control" name="item" placeholder="Item" value="<?php echo $row['item']; ?>"
       required><br><br>
     <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>"
       required><br><br>
-   
-    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5"></textarea><br><br>
+
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
+      rows="8"><?php echo $row['description']; ?></textarea><br><br>
     <select name="role" class="form-control">
       <option value="Controller" <?php if ($row['role'] == 'Controller') {
+        //The echo 'selected' statement is used to add the selected attribute to the HTML option tag when the value of $row['role'] matches with the option value 
         echo 'selected';
       } ?>>Controller</option>
-      <option value="Fighter" <?php if ($row['role'] == 'Fighter') {
+      <option value="Fighter" <?php if ($row['role'] == 'Fighter') // If the value of $row['role'] is equal to 'Controller', the selected attribute is added 
+      //to the option tag to indicate that this option should be pre-selected when the form is loaded.
+      {
         echo 'selected';
       } ?>>Fighter</option>
-      <option value="Marksman" <?php if ($row['role'] == 'Marksman') {
+      <option value="Marksman" <?php if ($row['role'] == 'Marksman') // If the value of $row['role'] is equal to 'Marksman', the selected attribute is added 
+      //to the option tag to indicate that this option should be pre-selected when the form is loaded. 
+      {
         echo 'selected';
       } ?>>Marksman</option>
       <option value="Slayer" <?php if ($row['role'] == 'Slayer') {
@@ -61,13 +66,15 @@ if ($result === false) {
         echo 'selected';
       } ?>>All</option>
     </select>
+    <!--The confirm() function displays a confirmation dialog box with the message "Are you sure you want to delete this item?" and two buttons, OK and Cancel. -->
     <div class="form-group">
       </select>
       <input type="submit" type="button" class="btn btn-primary" value="Update the item " name="update"
-        style="margin-top: 20px;"><br><br>
+        style="margin-top: 20px;" onclick="return confirm('Are you sure you want to update this item?');"><br><br>
 
       <div class="form-group">
-        <input type="submit" type="button" class="btn btn-primary" value="Delete the item " name="delete"><br><br>
+        <input type="submit" type="button" class="btn btn-primary" value="Delete the item " name="delete"
+          onclick="return confirm('Are you sure you want to delete this item?');"><br><br>
       </div>
     </div>
 
@@ -75,43 +82,44 @@ if ($result === false) {
     <br><br>
 
   </form>
-    </div>
-  <?php
-  include 'tuan_LOLdb.php';
-  if (isset($_POST['update'])) {
-    $item = mysqli_real_escape_string($conn, $_POST['item']);
-    $price = mysqli_real_escape_string($conn, $_POST['price']);
-    $description = mysqli_real_escape_string($conn, $_POST['description']);
-    $role = mysqli_real_escape_string($conn, $_POST['role']);
+</div>
 
-    $query = "UPDATE tuan_database SET item='$item', price='$price', description='$description', role='$role' WHERE id = '$a'";
-    $query_run = mysqli_query($conn, $query);
-    if ($query_run) {
-      echo '<script>alert("Data Updated Successfully");</script>';
-      header("Location: tuan_LOLsearch.php");
-    } else {
-      echo '<script>alert("Error Occurred While Updating Data");</script>';
-    }
-  }
-  ?>
+<?php
+include 'tuan_LOLdb.php';
+if (isset($_POST['update'])) {
+  $item = mysqli_real_escape_string($conn, $_POST['item']);
+  $price = mysqli_real_escape_string($conn, $_POST['price']);
+  $description = mysqli_real_escape_string($conn, $_POST['description']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
 
-  <?php
-  include 'tuan_LOLdb.php';
-  if (isset($_POST['delete'])) {
-    $item = mysqli_real_escape_string($conn, $_POST['item']);
-    $price = mysqli_real_escape_string($conn, $_POST['price']);
-    $description = mysqli_real_escape_string($conn, $_POST['description']);
-    $role = mysqli_real_escape_string($conn, $_POST['role']);
-    $query = "DELETE FROM tuan_database WHERE item = '$item'";
-    $query_run = mysqli_query($conn, $query);
-    if ($query_run) {
-      echo '<script>alert("Data Deleted Successfully");</script>';
-      header("Location: tuan_LOLsearch.php");
-    } else {
-      echo '<script>alert("Error Occurred While Deleting Data");</script>';
-    }
+  $query = "UPDATE tuan_database SET item='$item', price='$price', description='$description', role='$role' WHERE id = '$a'";
+  $query_run = mysqli_query($conn, $query);
+  if ($query_run) {
+    echo '<script>alert("Data Updated Successfully");</script>';
+    header("Location: tuan_LOLsearch.php");
+  } else {
+    echo '<script>alert("Error Occurred While Updating Data");</script>';
   }
-  ?>
-  <?php
-  include 'footer.php';
-  ?>
+}
+?>
+
+<?php
+include 'tuan_LOLdb.php';
+if (isset($_POST['delete'])) {
+  $item = mysqli_real_escape_string($conn, $_POST['item']);
+  $price = mysqli_real_escape_string($conn, $_POST['price']);
+  $description = mysqli_real_escape_string($conn, $_POST['description']);
+  $role = mysqli_real_escape_string($conn, $_POST['role']);
+  $query = "DELETE FROM tuan_database WHERE item = '$item'";
+  $query_run = mysqli_query($conn, $query);
+  if ($query_run) {
+    echo '<script>alert("Data Deleted Successfully");</script>';
+    header("Location: tuan_LOLsearch.php");
+  } else {
+    echo '<script>alert("Error Occurred While Deleting Data");</script>';
+  }
+}
+?>
+<?php
+include 'footer.php';
+?>
