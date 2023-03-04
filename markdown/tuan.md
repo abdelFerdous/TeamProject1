@@ -1,7 +1,8 @@
-I will add database about some name of the legends and meta build in each of them:
+I will add database about item:
     -name of the items
     -price:
-    -Runes for the legend
+    -Role
+    -Description
 
 20/2/2023:
 I have updated apperances of the pages :
@@ -16,3 +17,6 @@ I have finished my item's database. It works very good and I really satisfy with
 
 28/02/2022:
 I have fixed the error: input special character. I why try to update add picture to database, if it is posiible
+
+03/03/2023
+I have update validation for price: Price can only accept number, other character are not allowed.
