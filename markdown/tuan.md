@@ -1,6 +1,6 @@
 I will add database about item:
-    -name of the items
-    -price:
+    -Name of the items
+    -Price:
     -Role
     -Description
 
