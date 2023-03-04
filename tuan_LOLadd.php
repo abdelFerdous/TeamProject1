@@ -42,11 +42,18 @@ include("header.php") ?>
 
     // Check if the form was submitted
     if (isset($_POST["submit"])) {
-      //The mysqli_real_escape_string() function is used to escape special characters in the data submitted by the user to prevent SQL injection.
-      $item = mysqli_real_escape_string($conn, $_POST['item']);
-      $price = mysqli_real_escape_string($conn, $_POST['price']);
-      $description = mysqli_real_escape_string($conn, $_POST['description']);
-      $role = mysqli_real_escape_string($conn, $_POST['role']);
+       //The mysqli_real_escape_string() function is used to escape special characters in the data submitted by the user to prevent SQL injection.
+       $item = mysqli_real_escape_string($conn, $_POST['item']);
+       $price = mysqli_real_escape_string($conn, $_POST['price']);
+       $description = mysqli_real_escape_string($conn, $_POST['description']);
+       $role = mysqli_real_escape_string($conn, $_POST['role']);
+
+        // Check if the price is a valid number
+  if (!filter_var($price, FILTER_VALIDATE_FLOAT)) {
+    echo "ERROR: Invalid price. Only number allowed.";
+    exit();
+  }
+     
 
       // Define the SQL query to insert the data into the database
       $sql = "insert into tuan_database(item, price, description, role)
