@@ -32,7 +32,7 @@ function ValidateEmail()
 let email=document.getElementById("email").value; 
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 if(email.match(mailformat)){
-alert("Valid email address!");
+
 return true;
 }
 else{
@@ -45,7 +45,7 @@ function ValidatePhone()
 let phone=document.getElementById("phone").value; 
 var phoneformat = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
 if(phone.match(phoneformat)){
-alert("Valid phone number!");
+
 return true;
 }
 else{
