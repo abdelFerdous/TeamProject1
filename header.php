@@ -97,6 +97,9 @@
                                 <a class="nav-link" href="aboutUs.php" style="margin-right: 10px; color: white">About
                                     us</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="registration.php" style="margin-right: 10px; color: white">Register</a>
+                            </li>
 
                         </ul>
                     </div>
