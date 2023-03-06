@@ -3,33 +3,35 @@ $style1 = "style1.css";
 $style2 = "regstyle.css";
 $game1 = "Update account";
 $logo = "pic/avatar.png";
-include("header.php"); 
-$a=$_GET['userid'];
-include("db.php");
-$result=mysqli_query($connection , "select * from userinfo where id = '$a'");
-$row=mysqli_fetch_array($result);
-?><br><br><br>
+include("header.php"); ?>
+<br><br><br>
 <div class="wrapper">
     <div class="title">
       Registration Form
     </div>
+    <?php
+//$a=1 /**$_GET['userid']*/;
+ include("db.php");
+$result=mysqli_query($connection , "select * from userinfo where userid = 1");
+ $row=mysqli_fetch_array($result);
+?>
     <form action="" method="post">
     <div class="form">
        <div class="inputfield">
           <label>First Name</label>
-          <input type="text" class="input" name="fname" value="<?php echo $row[''] ?>">
+          <input type="text" class="input" name="fname" value="<?php echo $row['fname'] ?>">
        </div>  
         <div class="inputfield">
           <label>Last Name</label>
-          <input type="text" class="input" name="lname" value="<?php echo $row[''] ?>">
+          <input type="text" class="input" name="lname" value="<?php echo $row['lname'] ?>">
        </div>  
        <div class="inputfield">
           <label>Username</label>
-          <input type="text" class="input" name="username" value="<?php echo $row[''] ?>">
+          <input type="text" class="input" name="username" value="<?php echo $row['username'] ?>">
        </div>  
       <div class="inputfield">
           <label>E-mail</label>
-          <input type="text" class="input" name="email" id="email" onblur="ValidateEmail()" value="<?php echo $row[''] ?>">
+          <input type="text" class="input" name="email" id="email" onblur="ValidateEmail()" value="<?php echo $row['email'] ?>">
        </div> 
         <!-- <div class="inputfield">
           <label>Gender</label>
@@ -43,7 +45,7 @@ $row=mysqli_fetch_array($result);
        </div>  -->
         <div class="inputfield">
           <label>Phone Number</label>
-          <input type="text" class="input" name="phone" id="phone" onblur="ValidatePhone()" value="<?php echo $row[''] ?>">
+          <input type="text" class="input" name="phone" id="phone" onblur="ValidatePhone()" value="<?php echo $row['phone'] ?>">
        </div> 
       <div class="inputfield">
           <label>Password</label>
@@ -83,7 +85,7 @@ if(isset($_POST["submit"])){
   $phone=$_POST["phone"];
   $password =$_POST["password"]; 
   
-  $sql = "UPDATE userinfo SET fname ='$fname', lname='$lname', username='$username' , email='$email',phone='$phone' , password='$password'where userid='$a'";
+  $sql = "UPDATE userinfo SET fname ='$fname', lname='$lname', username='$username' , email='$email',phone='$phone' , password='$password'where userid=1";
    if($connection->query($sql)===true){
        echo "User account updated successfully";
    }else{

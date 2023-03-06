@@ -1,8 +1,8 @@
 <?php 
 $servername ="db";
-$username="root";
+$username="registrationdb";
 $password ="password";
-$dbname="team1db";
+$dbname="registrationdb";
 //creating connection
 $connection=new mysqli($servername , $username , $password , $dbname);
 //check connection
