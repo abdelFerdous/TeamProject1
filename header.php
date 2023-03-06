@@ -100,7 +100,17 @@ session_start();
                                 <a class="nav-link" href="aboutUs.php" style="margin-right: 10px; color: white">About
                                     us</a>
                             </li>
-                         
+                            <?php
+                            if (isset($_SESSION["session_uid"])){
+                                echo "
+                                <li class='nav-item'>
+                                <a class='nav-link' href='#' style='margin-right: 10px; color: white'>Hello, " . $_SESSION["session_uname"] . "</a>
+                                </li>
+                                ";
+                            }
+                            
+                            else {
+                            echo '
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false" style="color: white;">
@@ -117,8 +127,9 @@ session_start();
                                     </li>
 
                                 </ul>
-                            </li>
-
+                            </li>';
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
