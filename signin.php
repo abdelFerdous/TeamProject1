@@ -35,6 +35,9 @@ include("header.php") ?><br><br><br><br>
               $count = mysqli_num_rows($result);
             
               if ($count == 1) {
+              $_SESSION["session_uname"]=$username;
+              $_SESSION["session_pword"]=$password;
+              $_SESSION["session_uid"]=$row[0];
               echo "succeeded";
               header("location: index.php");
               } else {
