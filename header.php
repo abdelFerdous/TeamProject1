@@ -89,6 +89,14 @@ session_start();
                                         <a class="nav-link" href="tuan_searchLOL.php"
                                             style="margin-right: 10px; color: white">Search LOL item</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="addskin.php"
+                                            style="margin-right: 10px; color: white">Add LOL Skin</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="skinfavs2.php"
+                                            style="margin-right: 10px; color: white">Favourite LOL Skins</a>
+                                    </li>
 
                                 </ul>
                             </li>
