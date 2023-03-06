@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 06, 2023 at 09:09 AM
+-- Generation Time: Mar 06, 2023 at 10:47 AM
 -- Server version: 8.0.32
 -- PHP Version: 8.0.19
 
@@ -43,20 +43,20 @@ CREATE TABLE `matt_decks` (
 --
 
 CREATE TABLE `tuan_database` (
-  `userid` int NOT NULL,
   `id` int NOT NULL,
   `item` varchar(60) NOT NULL,
   `price` int NOT NULL,
   `role` varchar(60) NOT NULL,
-  `description` varchar(1000) NOT NULL
+  `description` varchar(1000) NOT NULL,
+  `email` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tuan_database`
 --
 
-INSERT INTO `tuan_database` (`userid`, `id`, `item`, `price`, `role`, `description`) VALUES
-(0, 7, 'The Collector', 3000, 'Tank', '300 Health\r\n45 Armor\r\n5% Move Speed\r\nShipwrecker: While moving, build up Move Speed. Your next Attack discharges built up Move Speed to deal damage. If dealt by a Melee champion at top speed, the Attack also Slows the target.\r\n\r\n\'\'There\'s only one way you\'ll get this armor from me...\'\' - forgotten namesake');
+INSERT INTO `tuan_database` (`id`, `item`, `price`, `role`, `description`, `email`) VALUES
+(7, 'The Collector', 3000, 'Tank', '300 Health\r\n45 Armor\r\n5% Move Speed\r\nShipwrecker: While moving, build up Move Speed. Your next Attack discharges built up Move Speed to deal damage. If dealt by a Melee champion at top speed, the Attack also Slows the target.\r\n\r\n\'\'There\'s only one way you\'ll get this armor from me...\'\' - forgotten namesake', 'micoteg@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -94,20 +94,23 @@ INSERT INTO `userinfo` (`userid`, `fname`, `lname`, `username`, `email`, `phone`
 --
 ALTER TABLE `matt_decks`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `deckName` (`deckName`);
+  ADD UNIQUE KEY `deckName` (`deckName`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `tuan_database`
 --
 ALTER TABLE `tuan_database`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `userid` (`userid`);
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  ADD PRIMARY KEY (`userid`);
+  ADD PRIMARY KEY (`userid`),
+  ADD KEY `email` (`email`),
+  ADD KEY `email_2` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -130,6 +133,22 @@ ALTER TABLE `tuan_database`
 --
 ALTER TABLE `userinfo`
   MODIFY `userid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `matt_decks`
+--
+ALTER TABLE `matt_decks`
+  ADD CONSTRAINT `matt_decks_ibfk_1` FOREIGN KEY (`email`) REFERENCES `userinfo` (`email`);
+
+--
+-- Constraints for table `tuan_database`
+--
+ALTER TABLE `tuan_database`
+  ADD CONSTRAINT `tuan_database_ibfk_1` FOREIGN KEY (`email`) REFERENCES `userinfo` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
