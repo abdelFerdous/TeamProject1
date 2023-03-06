@@ -33,7 +33,7 @@
             <nav class="navbar navbar-expand-lg bg-dark">
                 <div class="container-fluid">
                     <div class="margin1">
-                        <a class="navbar-brand" href="index.html"> <img src="pic/logoFinal.png" alt="Bootstrap"></a>
+                        <a class="navbar-brand" href="index.php"> <img src="pic/logoFinal.png" alt="Bootstrap"></a>
                         <img src="<?php echo $logo ?>" alt="Bootstrap" style="margin-left: -15px;"><a
                             style="color: white;"><?php echo $game1 ?></a>
                     </div>
