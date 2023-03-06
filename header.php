@@ -101,6 +101,10 @@
                                 <a class="nav-link" href="registration.php" style="margin-right: 10px; color: white">Register</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" href="signin.php" style="margin-right: 10px; color: white">Sign in</a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
