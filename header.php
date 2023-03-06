@@ -97,12 +97,23 @@
                                 <a class="nav-link" href="aboutUs.php" style="margin-right: 10px; color: white">About
                                     us</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="registration.php" style="margin-right: 10px; color: white">Register</a>
-                            </li>
+                         
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="color: white;">
+                                    Account
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark ">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="registration.php"
+                                            style="margin-right: 10px; color: white">Register</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="signin.php"
+                                            style="margin-right: 10px; color: white">Sign in</a>
+                                    </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="signin.php" style="margin-right: 10px; color: white">Sign in</a>
+                                </ul>
                             </li>
 
                         </ul>
