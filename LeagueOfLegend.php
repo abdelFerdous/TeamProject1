@@ -1,4 +1,3 @@
-
 <?php 
 $title = "League of legends";
 $game1 = "League of legends";

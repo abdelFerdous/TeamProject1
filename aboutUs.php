@@ -1,4 +1,3 @@
-
 <?php $title="About Us" ;
 $game1 ="About Us";
 $style1 = "style1.css";

@@ -110,11 +110,19 @@ session_start();
                                 <a class="nav-link" href="aboutUs.php" style="margin-right: 10px; color: white">About
                                     us</a>
                             </li>
+                            <script type="text/javascript" src="jquery.min.js"></script>
+                            <script type="text/javascript">
+                            function sessionUnset() {
+                            $.get("session_unset.php");
+                            location.reload();
+                            return false;
+                            }
+                            </script>
                             <?php
                             if (isset($_SESSION["session_uid"])){
                                 echo "
                                 <li class='nav-item'>
-                                <a class='nav-link' href='#' style='margin-right: 10px; color: white'>Hello, " . $_SESSION["session_uname"] . "</a>
+                                <a class='nav-link' href='#' onclick='sessionUnset();' style='margin-right: 10px; color: white'>Hello, " . $_SESSION["session_uname"] . "</a>
                                 </li>
                                 ";
                             }
