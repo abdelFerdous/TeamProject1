@@ -28,7 +28,7 @@ if($result->num_rows > 0){
   <div class="autocomplete" style="width:300px;" name = "searchskin">
     <input id="skin" type="text" name="skin" placeholder="Skin Name">
   </div>
-  <button type="submit" name="submit">Add to Favourites</button>
+  <button type="submit" name="submit" class="btn btn-primary">Add to Favourites</button>
 </form>
 <script>
 autocomplete(document.getElementById("skin"), available_skins);
