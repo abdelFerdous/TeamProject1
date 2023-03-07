@@ -12,7 +12,7 @@ include("header.php") ?>
   <div class="title">
     Add League of Legends item
   </div>
-  <form name="deckform" method="post" action="">
+  <form name="itemadd" method="post" action="" onsubmit="return tuanitem()">
 
     <input type="text" class="form-control" name="item" placeholder="Item" required><br><br>
     <input type="text" class="form-control" name="price" placeholder="Price" required><br><br>
@@ -43,16 +43,12 @@ include("header.php") ?>
     // Check if the form was submitted
     if (isset($_POST["submit"])) {
        //The mysqli_real_escape_string() function is used to escape special characters in the data submitted by the user to prevent SQL injection.
-       $item = mysqli_real_escape_string($conn, $_POST['item']);
+       $item = mysqli_real_escape_string($conn,$_POST['item']);
        $price = mysqli_real_escape_string($conn, $_POST['price']);
        $description = mysqli_real_escape_string($conn, $_POST['description']);
-       $role = mysqli_real_escape_string($conn, $_POST['role']);
+       $role = $_POST['role'];
 
-        // Check if the price is a valid number
-  if (!filter_var($price, FILTER_VALIDATE_FLOAT)) {
-    echo "ERROR: Invalid price. Only number allowed.";
-    exit();
-  }
+
      
 
       // Define the SQL query to insert the data into the database

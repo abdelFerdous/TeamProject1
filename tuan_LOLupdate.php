@@ -21,7 +21,7 @@ if ($result === false) {
     Update this item
   </div>
 
-  <form name="deckform" method="post" action="">
+  <form name="itemadd" method="post" action="" onsubmit="return tuanitem()">
     <input type="text" class="form-control" name="item" placeholder="Item" value="<?php echo $row['item']; ?>"
       required><br><br>
     <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>"

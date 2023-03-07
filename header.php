@@ -14,6 +14,7 @@ session_start();
     </title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="formval.js"> </script>
+    <script src="tuan_item.js"> </script>
     <script src="skinsearch.js">
     </script>
     <link rel="stylesheet"
