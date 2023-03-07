@@ -1,22 +1,23 @@
+function validatePrice(input) {
+    const price = parseInt(input);
+    return !isNaN(price) && price >= 0 && price <= 5000;
+  }
 function tuanitem(){
     let item=(document.itemadd.item.value).trim();
     let price=(document.itemadd.price.value).trim();
     let description=(document.itemadd.description.value).trim();
-    var valid = /^[\w\s']*$/;
-    var acceptinteger = /^(?:0|[1-3]\d{0,2}|4\d{2}|4000)$/;
+    var valid = /^[\w\s']*[^0-9]+$/;
 
     if (!item.match(valid)){
         alert("Accept only single quotes, word and spacing");
         return false;
     }
-    if(!price.match(acceptinteger)){
-        alert("Please type only integer");
+    
+    if(!validatePrice(price)){
+        alert("Please enter an integer between 0 and 5000 for price.");
         return false;
     }
-    else if(!price.match(acceptinteger)){
-        alert("Please enter the cost between 0 and 4000.");
-        return false
-    }
+
 
     if (item.length<5){
         alert("Item must have at least 5 characters");

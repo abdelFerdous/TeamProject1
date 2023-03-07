@@ -95,8 +95,8 @@ if (isset($_POST['update'])) {
   $query = "UPDATE tuan_database SET item='$item', price='$price', description='$description', role='$role' WHERE id = '$a'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
-    echo '<script>alert("Data Updated Successfully");</script>';
-    header("Location: tuan_LOLsearch.php");
+    echo '<script>alert("Data Updated Successfully"); window.location.href = "tuan_searchLOL.php";</script>';
+
   } else {
     echo '<script>alert("Error Occurred While Updating Data");</script>';
   }
@@ -113,8 +113,8 @@ if (isset($_POST['delete'])) {
   $query = "DELETE FROM tuan_database WHERE item = '$item'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
-    echo '<script>alert("Data Deleted Successfully");</script>';
-    header("Location: tuan_LOLsearch.php");
+    echo '<script>alert("Data Updated Successfully"); window.location.href = "tuan_searchLOL.php";</script>';
+
   } else {
     echo '<script>alert("Error Occurred While Deleting Data");</script>';
   }
