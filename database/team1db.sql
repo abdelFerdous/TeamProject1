@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 07, 2023 at 10:55 AM
+-- Generation Time: Mar 07, 2023 at 11:58 AM
 -- Server version: 8.0.32
 -- PHP Version: 8.0.19
 
@@ -47,6 +47,13 @@ CREATE TABLE `georgii_skins` (
   `showcase` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `georgii_skins`
+--
+
+INSERT INTO `georgii_skins` (`id`, `champ`, `name`, `cost`, `showcase`) VALUES
+(4, 'mom', 'Witchcrafter', 2, '3gf1qwecds');
+
 -- --------------------------------------------------------
 
 --
@@ -69,7 +76,8 @@ CREATE TABLE `matt_decks` (
 INSERT INTO `matt_decks` (`id`, `deckName`, `deckCode`, `region1`, `region2`, `email`) VALUES
 (27, 'EditTesting', '56hyrhyy5tnytntdy5tndt5yhtnt', 'Shadow Isles', 'Demacia', 'micoteg@gmail.com'),
 (28, 'Testing', 'egevnuagj;kvmqbtegjwnlkbgftr', 'Bilgewater', 'Demacia', 'micoteg@gmail.com'),
-(29, 'EditTesting2', 'egevnuagj;kvmqbtegjwnlkbgftr', 'Bilgewater', 'Shurima', 'micoteg@gmail.com');
+(29, 'EditTesting2', 'egevnuagj;kvmqbtegjwnlkbgftr', 'Bilgewater', 'Shurima', 'micoteg@gmail.com'),
+(30, 'EditTestingagain', '56hyrhyy5tnytntdy5tndt5yhtnt', 'Piltover & Zaun', 'Demacia', 'mattenricoflores2022@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -90,7 +98,10 @@ CREATE TABLE `tuan_database` (
 --
 
 INSERT INTO `tuan_database` (`id`, `item`, `price`, `role`, `description`) VALUES
-(9, 'Ball', 12, 'Support', 'y65ter');
+(11, 'pan', 12, 'Assassin', 'kjhgfdsa'),
+(12, 'Ball', 12, 'Support', 'qwsdewqs'),
+(13, 'Ball', 12, 'Support', 'qwsdewqs'),
+(14, 'Ball', 12, 'Support', 'qwsdewqs');
 
 -- --------------------------------------------------------
 
@@ -107,6 +118,13 @@ CREATE TABLE `userinfo` (
   `phone` varchar(20) NOT NULL,
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `userinfo`
+--
+
+INSERT INTO `userinfo` (`userid`, `fname`, `lname`, `username`, `email`, `phone`, `password`) VALUES
+(9, 'Matt Enrico', 'Flores', 'matt_database', 'mattenricoflores2022@gmail.com', '0415716501', 'password');
 
 --
 -- Indexes for dumped tables
@@ -144,8 +162,7 @@ ALTER TABLE `tuan_database`
 --
 ALTER TABLE `userinfo`
   ADD PRIMARY KEY (`userid`),
-  ADD KEY `email` (`email`),
-  ADD KEY `email_2` (`email`);
+  ADD KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -161,25 +178,25 @@ ALTER TABLE `georgii_fav_skins`
 -- AUTO_INCREMENT for table `georgii_skins`
 --
 ALTER TABLE `georgii_skins`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `matt_decks`
 --
 ALTER TABLE `matt_decks`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tuan_database`
 --
 ALTER TABLE `tuan_database`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `userid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -193,10 +210,15 @@ ALTER TABLE `georgii_fav_skins`
   ADD CONSTRAINT `FK_userid` FOREIGN KEY (`userID`) REFERENCES `userinfo` (`userid`);
 
 --
+-- Constraints for table `tuan_database`
+--
+ALTER TABLE `tuan_database`
+  ADD CONSTRAINT `tuan_database_ibfk_1` FOREIGN KEY (`id`) REFERENCES `userinfo` (`userid`);
+
+--
 -- Constraints for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  ADD CONSTRAINT `id` FOREIGN KEY (`userid`) REFERENCES `tuan_database` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `userinfo_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `matt_decks` (`id`);
 COMMIT;
 
