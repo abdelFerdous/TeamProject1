@@ -1,6 +1,5 @@
-
 <?php
-//session_start();
+session_start();
 // $db = mysqli_connect("db", "registrationdb", "password", "registrationdb");
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -38,9 +37,9 @@ include("db.php");
               $count = mysqli_num_rows($result);
             
               if ($count == 1) {
-                
+                $_SESSION["session_uname"] = $username;
+                $_SESSION["session_uid"] = $a;
              echo '<script>window.location.href = "index.php";</script>';
-                
                   
               
               } else {

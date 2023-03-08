@@ -152,7 +152,7 @@ session_start();
                                         </li>
                                        <li class="nav-item">
                                             <a class="nav-link" href="signin.php"
-                                                style="margin-right: 10px; color: white">Log out</a>
+                                                style="margin-right: 10px; color: white">Log in</a>
                                         </li>
                                         
     

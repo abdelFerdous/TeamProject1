@@ -4,7 +4,7 @@ $style2 = "style1.css";
 $style1 = "georgii_fav.css";
 $game1 = "Add Skins";
 $logo = "pic/LOL Logo clear background.png";
-
+include "skindb.php";
 include("header.php") ?>
 
 <div class="wrapper" style="margin-top:100px; ">
@@ -18,7 +18,11 @@ include("header.php") ?>
     <input type="number" class="form-control" name="price" placeholder="Price (0 if cannot buy)"><br><br>
     <input type="text" class="form-control" name="showcase" placeholder="YT Showcase"><br><br>
     
+    <div class="row">
+    <div class="col-md-12">
     <input type="submit" type="button" class="btn btn-primary" value="Submit" name="submit">
+    </div>
+    </div>
 
     <!-- PHP area -->
     <?php
@@ -42,5 +46,52 @@ include("header.php") ?>
   }
   ?>
   </form>
+</div>
+<div class="container">
+    <div class="title">
+        All skins:
+    </div>
+    <div class="col-md-12">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <!-- Create column headers for the search results table -->
+                                <th>Champion</th>
+                                <th>Skin Name</th>
+                                <th>Price</th>
+                                <th>Showcase Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $user = $_SESSION["session_uid"];
+                            $sql = "SELECT * FROM georgii_skins";
+                            $result = $conn->query($sql);
+                            if ($result && $result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()){
+                                    echo"
+                                        <tr>
+                                        <td>$row[champ]</td>
+                                        <td><a href='update_skin.php?id=$row[id]'>$row[name]</a></td>
+                                        <td>$row[cost]</td>
+                                        <td>$row[showcase]</td>
+                                        </tr>";
+                                }
+                            }
+                            else {
+                                echo '
+                                <tr>
+                                    <td colspan="5">No Record Found</td> 
+                                </tr>
+                                ';
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
 </div>
 <?php include('footer.php') ?>
