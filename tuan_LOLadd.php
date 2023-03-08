@@ -54,21 +54,26 @@ include("header.php") ?>
 
      
 
-       $check_item_query = "SELECT id FROM tuan_database WHERE item = '$item'";
-       $result = $conn->query($check_item_query);
-       if ($result->num_rows > 0) {
-          echo "Error: Item already exists in the database";
-       } else {
-          // Define the SQL query to insert the data into the database
-          $sql = "INSERT INTO tuan_database(item, price, description, role) VALUES ('$item', '$price', '$description', '$role')";
-    
-          // Execute the SQL query and check if it was successful
-          if ($conn->query($sql) === true) {
-             echo "Your information is added successfully";
-          } else {
-             echo "Error: " . $conn->error;
-          }
-       }
+      // Check if item already exists in the database
+$check_item_query = "SELECT id FROM tuan_database WHERE item = '$item'";
+$result = $conn->query($check_item_query);
+
+if ($result->num_rows > 0) {
+  // If the item already exists, display an error message
+  echo "Error: Item already exists in the database";
+} else {
+  // If the item doesn't exist, define the SQL query to insert the data into the database
+  $sql = "INSERT INTO tuan_database(item, price, description, role) VALUES ('$item', '$price', '$description', '$role')";
+
+  // Execute the SQL query and check if it was successful
+  if ($conn->query($sql) === true) {
+    // If the query was successful, display a success message
+    echo "Your information is added successfully";
+  } else {
+    // If the query was not successful, display an error message
+    echo "Error: " . $conn->error;
+  }
+}
     }
     ?>
   </form>
