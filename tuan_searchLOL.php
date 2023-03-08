@@ -12,7 +12,7 @@ include('header.php');
         <div class="col-md-12">
             <div class="card mt-4">
                 <div class="card-header">
-                    <h4>Search for an item</h4>
+                    <h4>Search for an item (Click item name to modiify the item information)</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -56,7 +56,7 @@ include('header.php');
                             //Defines a SQL query string that searches the 'tuan_database' table for any records 
                             //that match the search input in any of the fields 'item', 'role', 'price', or 'description'. 
                             //The '%' wildcard characters are used to match any combination of characters before and after the search input.
-                            $query = "SELECT * FROM tuan_database WHERE item LIKE '%$filtervalues%' OR role LIKE '%$filtervalues%' OR price LIKE '%$filtervalues%' OR description LIKE '%$filtervalues%' ";
+                            $query = "SELECT * FROM tuan_database WHERE item LIKE '%$filtervalues%' OR role LIKE '%$filtervalues%' OR price LIKE '%$filtervalues%'";
                             $query_run = mysqli_query($conn, $query);
 
                             if ($query_run && mysqli_num_rows($query_run) > 0) {

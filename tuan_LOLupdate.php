@@ -76,7 +76,7 @@ if ($result === false) {
         style="margin-top: 20px;" onclick="return confirm('Are you sure you want to update this item?');"><br><br>
 
       <div class="form-group">
-        <input type="submit" type="button" class="btn btn-primary" value="Delete the item " name="delete"
+        <input type="submit" type="button" class="btn btn-danger" value="Delete the item " name="delete"
           onclick="return confirm('Are you sure you want to delete this item?');"><br><br>
       </div>
     </div>
