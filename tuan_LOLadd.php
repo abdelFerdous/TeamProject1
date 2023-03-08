@@ -13,8 +13,12 @@ include("header.php") ?>
     Add League of Legends item
   </div>
   <form name="itemadd" method="post" action="" onsubmit="return tuanitem()">
-    <input type="text" class="form-control" name="item" placeholder="Item" required><br><br>
-    <input type="text" class="form-control" name="price" placeholder="Price" required><br><br>
+  <label for="disabledTextInput" class="form-label">Item</label>
+    <input type="text" class="form-control" name="item" placeholder="Item" required><br>
+    <label for="disabledTextInput" class="form-label">Price</label>
+    <input type="text" class="form-control" name="price" placeholder="Price" required>
+    <div id="emailHelp" class="form-text">You can only type amount in number without any characters</div><br>
+    <label for="disabledTextInput" class="form-label">Description</label>
     <textarea class="form-control" placeholder="Description" name="description" id="exampleFormControlTextarea1"
       rows="5"></textarea><br><br>
     <select name="role" class="form-control"><br><br>

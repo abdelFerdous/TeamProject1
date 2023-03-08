@@ -22,11 +22,14 @@ if ($result === false) {
   </div>
 
   <form name="itemadd" method="post" action="" onsubmit="return tuanitem()">
+  <label for="disabledTextInput" class="form-label">Item</label>
     <input type="text" class="form-control" name="item" placeholder="Item" value="<?php echo $row['item']; ?>"
-      required><br><br>
+      required><br>
+      <label for="disabledTextInput" class="form-label">Price</label>
     <input type="text" class="form-control" name="price" placeholder="Price" value="<?php echo $row['price']; ?>"
-      required><br><br>
-
+      required>
+      <div id="emailHelp" class="form-text">You can only type amount in number without any characters</div><br>
+      <label for="disabledTextInput" class="form-label">Description</label>
     <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
       rows="8"><?php echo $row['description']; ?></textarea><br><br>
     <select name="role" class="form-control">
