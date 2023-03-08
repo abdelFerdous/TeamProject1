@@ -67,10 +67,10 @@ include("header.php"); ?><br><br><br>
     
 </div>
 <?php 
-echo "processing" ;
+ 
 
 if(isset($_POST["submit"])){
-  echo"now creating variables";
+  
   $fname=$_POST["fname"];
   $lname=$_POST["lname"];
   $username=$_POST["username"];
@@ -82,6 +82,8 @@ if(isset($_POST["submit"])){
           values('$fname','$lname','$username' , '$email','$phone' , '$password')";
    if($connection->query($sql)===true){
        echo "database updated successfully";
+       echo '<script>window.location.href = "index.php";</script>';
+
    }else{
        echo "Error :".$connection->error;
    }
