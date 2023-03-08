@@ -50,16 +50,21 @@ include("header.php") ?>
 
      
 
-      // Define the SQL query to insert the data into the database
-      $sql = "insert into tuan_database(item, price, description, role)
-values ('$item', '$price', '$description', '$role')";
-
-      // Execute the SQL query and check if it was successful
-      if ($conn->query($sql) === true) {
-        echo "Your information is added successfully";
-      } else {
-        echo "Error: " . $conn->error;
-      }
+       $check_item_query = "SELECT id FROM tuan_database WHERE item = '$item'";
+       $result = $conn->query($check_item_query);
+       if ($result->num_rows > 0) {
+          echo "Error: Item already exists in the database";
+       } else {
+          // Define the SQL query to insert the data into the database
+          $sql = "INSERT INTO tuan_database(item, price, description, role) VALUES ('$item', '$price', '$description', '$role')";
+    
+          // Execute the SQL query and check if it was successful
+          if ($conn->query($sql) === true) {
+             echo "Your information is added successfully";
+          } else {
+             echo "Error: " . $conn->error;
+          }
+       }
     }
     ?>
   </form>
