@@ -12,15 +12,15 @@ include("header.php"); ?><br><br><br>
     <div class="form">
        <div class="inputfield">
           <label>First Name</label>
-          <input type="text" class="input" name="fname">
+          <input type="text" class="input" name="fname" required>
        </div>  
         <div class="inputfield">
           <label>Last Name</label>
-          <input type="text" class="input" name="lname">
+          <input type="text" class="input" name="lname" required>
        </div>  
        <div class="inputfield">
           <label>Username</label>
-          <input type="text" class="input" name="username">
+          <input type="text" class="input" name="username" required>
        </div>  
       <div class="inputfield">
           <label>E-mail</label>
