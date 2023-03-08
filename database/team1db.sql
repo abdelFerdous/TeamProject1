@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 07, 2023 at 11:58 AM
+-- Generation Time: Mar 08, 2023 at 10:17 AM
 -- Server version: 8.0.32
 -- PHP Version: 8.0.19
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -74,10 +75,11 @@ CREATE TABLE `matt_decks` (
 --
 
 INSERT INTO `matt_decks` (`id`, `deckName`, `deckCode`, `region1`, `region2`, `email`) VALUES
-(27, 'EditTesting', '56hyrhyy5tnytntdy5tndt5yhtnt', 'Shadow Isles', 'Demacia', 'micoteg@gmail.com'),
 (28, 'Testing', 'egevnuagj;kvmqbtegjwnlkbgftr', 'Bilgewater', 'Demacia', 'micoteg@gmail.com'),
 (29, 'EditTesting2', 'egevnuagj;kvmqbtegjwnlkbgftr', 'Bilgewater', 'Shurima', 'micoteg@gmail.com'),
-(30, 'EditTestingagain', '56hyrhyy5tnytntdy5tndt5yhtnt', 'Piltover & Zaun', 'Demacia', 'mattenricoflores2022@gmail.com');
+(30, 'EditTestingagain', '56hyrhyy5tnytntdy5tndt5yhtnt', 'Piltover & Zaun', 'Demacia', 'mattenricoflores2022@gmail.com'),
+(31, 'testingEditing', 'qwertyuiopasdfghjkl', 'Ionia', 'Demacia', 'micoteg@gmail.com'),
+(33, 'EditTestingagain1232e31e', '56hyrhyy5tnytntdy5tndt5yhtnt', 'Demacia', 'Freljord', 'micoteg@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -184,7 +186,7 @@ ALTER TABLE `georgii_skins`
 -- AUTO_INCREMENT for table `matt_decks`
 --
 ALTER TABLE `matt_decks`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tuan_database`
@@ -220,6 +222,7 @@ ALTER TABLE `tuan_database`
 --
 ALTER TABLE `userinfo`
   ADD CONSTRAINT `userinfo_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `matt_decks` (`id`);
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
