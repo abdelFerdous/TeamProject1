@@ -140,12 +140,7 @@ session_start();
                                             <a class="nav-link" href="registration.php"
                                                 style="margin-right: 10px; color: white">Register</a>
                                         </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="updateaccount.php"
-                                            style="margin-right: 10px; color: white">Update Account</a>
-                                        </li>
-    
-                                        <li class="nav-item">
+                                       <li class="nav-item">
                                             <a class="nav-link" href="signin.php"
                                                 style="margin-right: 10px; color: white">Log out</a>
                                         </li>
@@ -153,6 +148,7 @@ session_start();
     
                                     </ul>
                                 </li>';
+                            }
                             ?>
                         </ul>
                     </div>
