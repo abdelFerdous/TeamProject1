@@ -121,11 +121,21 @@ session_start();
                             </script>
                             <?php
                             if (isset($_SESSION["session_uid"])){
-                                echo "
-                                <li class='nav-item'>
-                                <a class='nav-link' href='#' onclick='sessionUnset();' style='margin-right: 10px; color: white'>Hello, " . $_SESSION["session_uname"] . "</a>
+                                echo '
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="color: white;">'
+                                    . $_SESSION["session_uname"] . '
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark ">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" onclick="sessionUnset();"
+                                            style="margin-right: 10px; color: white">Sign out</a>
+                                    </li>
+
+                                </ul>
                                 </li>
-                                ";
+                                ';
                             }
                             
                             else {

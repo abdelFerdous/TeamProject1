@@ -1,8 +1,8 @@
 <?php
 $title = "Add item";
 $style2 = "style1.css";
-$style1 = "tuan_deck.css";
-$game1 = "League Of Legends meta";
+$style1 = "georgii_fav.css";
+$game1 = "Add Skins";
 $logo = "pic/LOL Logo clear background.png";
 
 include("header.php") ?>

@@ -3,7 +3,7 @@
 $style2 = "style1.css";
 $style1 = "georgii_fav.css";
 $game1 = "Skin search";
-$logo = "pic/black.jpg";
+$logo = "pic/LOL Logo clear background.png";
 include 'skindb.php';
 include("header.php");
 ?>
@@ -61,6 +61,7 @@ if (isset($_POST['submit'])){
 <div class="wrapper">
     <div class="title">
         Your Favourite Skins:
+
     </div>
 
 </div>
