@@ -68,7 +68,7 @@ if ($conn ->query($sql) === TRUE){
         echo "<h2>Your information was added successfully</h2>";
 }
 else {
-    echo "<h2>ERROR: Your information was not added successfully. (Deck Names need to be unique)</h2>";
+    echo "<h2>ERROR: Your information was not added successfully. (Deck Names need to be unique)</h2> "  . $conn->error;;
 }
 }
 ?>
