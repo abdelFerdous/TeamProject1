@@ -5,21 +5,31 @@ $game1 = "Update account";
 $logo = "pic/avatar.png";
 include("header.php"); ?>
 <br><br><br>
+
 <div class="wrapper">
+
+<script> //window.alert("this will trigger an alert box"); 
+         var this=storeVal();
+       // consol.log(this);
+</script>
     <div class="title">
-      Registration Form
+      Update Account
     </div>
+
     <?php
 //$a=1 /**$_GET['userid']*/;
- include("db.php");
-$result=mysqli_query($connection , "select * from userinfo where userid = 1");
- $row=mysqli_fetch_array($result);
+ include("process.php");
+ 
+ $res=mysqli_query($connection , "select * from userinfo where userid = 8 ");
+ $row=mysqli_fetch_array($res);
+ 
+
 ?>
     <form action="" method="post">
     <div class="form">
        <div class="inputfield">
           <label>First Name</label>
-          <input type="text" class="input" name="fname" value="<?php echo $row['fname'] ?>">
+          <input type="text" class="input" name="fname" value="<?php echo $row['fname']?>">
        </div>  
         <div class="inputfield">
           <label>Last Name</label>
@@ -67,7 +77,7 @@ $result=mysqli_query($connection , "select * from userinfo where userid = 1");
           <p>Agreed to terms and conditions</p>
        </div> 
       <div class="inputfield">
-        <input type="submit" name="submit" value="Register" class="btn">
+        <input type="submit" name="submit" value="Update" class="btn">
       </div>
 </div>
 </form>
@@ -85,7 +95,7 @@ if(isset($_POST["submit"])){
   $phone=$_POST["phone"];
   $password =$_POST["password"]; 
   
-  $sql = "UPDATE userinfo SET fname ='$fname', lname='$lname', username='$username' , email='$email',phone='$phone' , password='$password'where userid=1";
+  $sql = "UPDATE userinfo SET fname ='$fname', lname='$lname', username='$username' , email='$email',phone='$phone' , password='$password'where userid=8";
    if($connection->query($sql)===true){
        echo "User account updated successfully";
    }else{

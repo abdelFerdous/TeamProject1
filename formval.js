@@ -62,3 +62,7 @@ function matchPassword() {
       alert("Passwords did not match");  
     }  
   } 
+
+function storeVal(){
+    return document.getElementById("username").value;
+}  
