@@ -13,7 +13,6 @@ include("header.php") ?>
     Add League of Legends item
   </div>
   <form name="itemadd" method="post" action="" onsubmit="return tuanitem()">
-
     <input type="text" class="form-control" name="item" placeholder="Item" required><br><br>
     <input type="text" class="form-control" name="price" placeholder="Price" required><br><br>
     <textarea class="form-control" placeholder="Description" name="description" id="exampleFormControlTextarea1"
