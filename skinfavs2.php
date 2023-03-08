@@ -19,7 +19,7 @@ include("header.php");
         iframe.remove();
     }
 </script>
-<div class="wrapper" style="margin-top:100px; " onmouseover="showcaseIframe('google.com')">
+<div class="wrapper" style="margin-top:100px; ">
   <div class="title">
     Skin Search
   </div>
