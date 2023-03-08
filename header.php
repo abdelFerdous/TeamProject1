@@ -129,25 +129,30 @@ session_start();
                             }
                             
                             else {
-                            echo '
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false" style="color: white;">
-                                    Account
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark ">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="registration.php"
-                                            style="margin-right: 10px; color: white">Register</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="signin.php"
-                                            style="margin-right: 10px; color: white">Sign in</a>
-                                    </li>
-
-                                </ul>
-                            </li>';
-                            }
+                                echo '
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="color: white;">
+                                        Account
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark ">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="registration.php"
+                                                style="margin-right: 10px; color: white">Register</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="updateaccount.php"
+                                            style="margin-right: 10px; color: white">Update Account</a>
+                                        </li>
+    
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="signin.php"
+                                                style="margin-right: 10px; color: white">Log out</a>
+                                        </li>
+                                        
+    
+                                    </ul>
+                                </li>';
                             ?>
                         </ul>
                     </div>
