@@ -54,7 +54,7 @@ include('header.php');
                             // Retrieve the search term submitted via GET method and sanitize it
                             $filtervalues = isset($_GET['search']) ? $_GET['search'] : '';
                             //Defines a SQL query string that searches the 'tuan_database' table for any records 
-                            //that match the search input in any of the fields 'item', 'role', 'price', or 'description'. 
+                            //that match the search input in any of the fields 'item', 'role', 'price'. 
                             //The '%' wildcard characters are used to match any combination of characters before and after the search input.
                             $query = "SELECT * FROM tuan_database WHERE item LIKE '%$filtervalues%' OR role LIKE '%$filtervalues%' OR price LIKE '%$filtervalues%'";
                             $query_run = mysqli_query($conn, $query);
