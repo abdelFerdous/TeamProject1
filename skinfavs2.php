@@ -9,12 +9,17 @@ include("header.php");
 ?>
 <script type="text/javascript">
     function showcaseIframe(url) {
+        //creating iframe window
         var iframe = document.createElement('iframe');
+        //adding id for the element
         iframe.id = "showcaseiframe";
+        //the source of the iframe
         iframe.src = "https://www.youtube.com/embed/" + url + "?&autoplay=1&mute=1";
+        //append to the body
         document.body.appendChild(iframe);
     }
     function deleteIframe(){
+        //deleting iframe
         var iframe = document.getElementById('showcaseiframe');
         iframe.remove();
     }
