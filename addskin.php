@@ -62,6 +62,7 @@ include("header.php") ?>
                                 <th>Skin Name</th>
                                 <th>Price</th>
                                 <th>Showcase Link</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,9 +75,10 @@ include("header.php") ?>
                                     echo"
                                         <tr>
                                         <td>$row[champ]</td>
-                                        <td><a href='update_skin.php?id=$row[id]'>$row[name]</a></td>
+                                        <td>$row[name]</td>
                                         <td>$row[cost]</td>
                                         <td>$row[showcase]</td>
+                                        <td><a href='update_skin.php?id=$row[id]'>Edit/Del</a></td>
                                         </tr>";
                                 }
                             }

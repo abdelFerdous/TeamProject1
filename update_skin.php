@@ -3,6 +3,7 @@ $title = "Update Skins";
 $style2 = "style1.css";
 $style1 = "georgii_fav.css";
 $game1 = "Skin update";
+$logo = "pic/LOL Logo clear background.png";
 include 'skindb.php';
 include 'header.php';
 $a = $_GET['id'];

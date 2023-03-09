@@ -96,6 +96,7 @@ if (isset($_POST['submit'])){
                                 <th>Champion</th>
                                 <th>Skin Name</th>
                                 <th>Price</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,8 +112,9 @@ if (isset($_POST['submit'])){
                                     echo"
                                         <tr onmouseover='showcaseIframe(\"" .$row["showcase"] . "\")' onmouseout='deleteIframe()'>
                                         <td>$row[champ]</td>
-                                        <td><a href='delete_fav.php?id=$row[entryID]'>$row[name]</a></td>
+                                        <td>$row[name]</td>
                                         <td>$row[cost]</td>
+                                        <td><a href='delete_fav.php?id=$row[entryID]' style='color:red'>Remove from List</a></td>
                                         </tr>";
                                 }
                             }
