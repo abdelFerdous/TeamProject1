@@ -76,8 +76,8 @@ if ($result === false) {
         style="margin-top: 20px;" onclick="return confirm('Are you sure you want to update this item?');"><br><br>
 
       <div class="form-group">
-        <input type="submit" type="button" class="btn btn-primary" value="Delete the item " name="delete"
-          onclick="return confirm('Are you sure you want to delete this item?');"><br><br>
+        <input type="submit" type="button" class="btn btn-danger" value="Delete the item " name="delete"
+          onclick="return confirm('Are you sure you want to delete this item?');">
       </div>
     </div>
 
@@ -90,6 +90,8 @@ if ($result === false) {
 <?php
 include 'tuan_LOLdb.php';
 if (isset($_POST['update'])) {
+  //mysqli_real_escape_string() is a function in PHP that is used to escape special characters in a string so that it can be used safely in an SQL query.
+  //By using mysqli_real_escape_string(), the special characters are replaced with their corresponding escape sequences, making them safe for use in SQL queries
   $item = mysqli_real_escape_string($conn, $_POST['item']);
   $price = mysqli_real_escape_string($conn, $_POST['price']);
   $description = mysqli_real_escape_string($conn, $_POST['description']);
@@ -98,8 +100,8 @@ if (isset($_POST['update'])) {
   $query = "UPDATE tuan_database SET item='$item', price='$price', description='$description', role='$role' WHERE id = '$a'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
+    //window.location.href is a JavaScript command that sets the URL of the current window to the specified value, effectively redirecting the user to a new page.
     echo '<script>alert("Data Updated Successfully"); window.location.href = "tuan_searchLOL.php";</script>';
-
   } else {
     echo '<script>alert("Error Occurred While Updating Data");</script>';
   }
@@ -109,6 +111,7 @@ if (isset($_POST['update'])) {
 <?php
 include 'tuan_LOLdb.php';
 if (isset($_POST['delete'])) {
+  //By using mysqli_real_escape_string(), the special characters are replaced with their corresponding escape sequences, making them safe for use in SQL queries
   $item = mysqli_real_escape_string($conn, $_POST['item']);
   $price = mysqli_real_escape_string($conn, $_POST['price']);
   $description = mysqli_real_escape_string($conn, $_POST['description']);
@@ -116,6 +119,7 @@ if (isset($_POST['delete'])) {
   $query = "DELETE FROM tuan_database WHERE item = '$item'";
   $query_run = mysqli_query($conn, $query);
   if ($query_run) {
+    //window.location.href is a JavaScript command that sets the URL of the current window to the specified value, effectively redirecting the user to a new page.
     echo '<script>alert("Data Updated Successfully"); window.location.href = "tuan_searchLOL.php";</script>';
 
   } else {
