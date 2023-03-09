@@ -11,10 +11,10 @@ include("header.php") ?>
   <div class="title">
     Add League of Legends skin
   </div>
-  <form name="skinadd_form" method="post" action="">
+  <form name="skinadd_form" method="post" action="" onsubmit="return valSkin()">
 
     <input type="text" class="form-control" name="champ" placeholder="Champion" required><br><br>
-    <input type="text" class="form-control" name="name" placeholder="Name" required><br><br>
+    <input type="text" class="form-control" name="sname" placeholder="Name" required><br><br>
     <input type="number" class="form-control" name="price" placeholder="Price (0 if cannot buy)"><br><br>
     <input type="text" class="form-control" name="showcase" placeholder="YT Showcase"><br><br>
     
@@ -28,7 +28,7 @@ include("header.php") ?>
     <?php
     if (isset($_POST['submit'])){
     $champ=$_POST['champ'];
-    $name=$_POST['name'];
+    $name=$_POST['sname'];
     $price=intval($_POST['price']);
     $showcase=$_POST['showcase'];
 

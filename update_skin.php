@@ -14,10 +14,10 @@ $row = mysqli_fetch_array($res);
   <div class="title">
     Update League of Legends skin
   </div>
-  <form name="skinadd_form" method="post" action="">
+  <form name="skinadd_form" method="post" action="" onsubmit="return valSkin()">
 
     <input type="text" class="form-control" name="champ" placeholder="Champion" required value="<?php echo $row['champ'];?>"><br><br>
-    <input type="text" class="form-control" name="name" placeholder="Name" required value="<?php echo $row['name'];?>"><br><br>
+    <input type="text" class="form-control" name="sname" placeholder="Name" required value="<?php echo $row['name'];?>"><br><br>
     <input type="number" class="form-control" name="price" placeholder="Price (0 if cannot buy)" value="<?php echo $row['cost'];?>"><br><br>
     <input type="text" class="form-control" name="showcase" placeholder="YT Showcase" value="<?php echo $row['showcase'];?>"><br><br>
     
@@ -30,7 +30,7 @@ $row = mysqli_fetch_array($res);
 <?php 
     if(isset($_POST['update'])){
         $champ = $_POST['champ'];
-        $name = $_POST['name'];
+        $name = $_POST['sname'];
         $price=intval($_POST['price']);
         $showcase=$_POST['showcase'];
 

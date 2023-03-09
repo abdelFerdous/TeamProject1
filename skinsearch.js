@@ -113,3 +113,28 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
   });
   }
+
+  function valSkin() {
+    alert();
+    let champ=(document.skinadd_form.champ.value).trim();
+    let name=(document.skinadd_form.sname.value).trim();
+    let showcase=(document.skinadd_form.showcase.value).trim();
+    let price=parseInt((document.skinadd_form.price.value).trim());
+
+    if (isNaN(price) || price < 0 || price >= 10000){
+        alert("Price must be between 0 and 10000");
+        return false;
+    }
+    if (champ.length < 3){
+        alert("Champion Name must be at least 3 characters");
+        return false;
+    }
+    if (name.length < 3){
+        alert("Skin Name must be at least 3 characters");
+        return false;
+    }
+    if (showcase.length < 5){
+        alert("Showcase id must be at least 5 characters");
+        return false;
+    }
+  }
